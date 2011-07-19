@@ -7,3 +7,4 @@
 # See http://pip-installer.org/requirement-format.html for more information.
 gondor==1.0b1.post10
 psycopg2==2.4.1
+PIL==1.1.6
