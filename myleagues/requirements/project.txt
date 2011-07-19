@@ -8,3 +8,4 @@
 gondor==1.0b1.post10
 psycopg2==2.4.1
 PIL==1.1.7
+south=0.7.3

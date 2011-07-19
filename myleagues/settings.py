@@ -186,7 +186,8 @@ INSTALLED_APPS = [
     "django_sorting",
     "django_markup",
     "tagging_ext",
-    
+    "south",
+
     # Pinax
     "pinax.apps.account",
     "pinax.apps.signup_codes",
