@@ -197,6 +197,7 @@ INSTALLED_APPS = [
     "pinax.apps.photos",
     "pinax.apps.topics",
     "pinax.apps.threadedcomments_extras",
+    "pinax.apps.signup_codes",
     "pinax.apps.voting_extras",
     
     # project
