@@ -186,7 +186,6 @@ INSTALLED_APPS = [
     "django_markup",
     "tagging_ext",
     "south",
-    "idios",
 
     # Pinax
     "pinax.apps.account",
