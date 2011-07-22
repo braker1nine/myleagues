@@ -1,0 +1,24 @@
+{% extends "profiles/base.html" %}
+
+{% load i18n %}
+{% load account_tags %}
+{% load avatar_tags %}
+{% load uni_form_tags %}
+{% load group_tags %}
+{% load microblogging_tags %}
+{% load blog_tags %}
+{% load tagging_tags %}
+{% load photo_tags %}
+{% load threadedcommentstags %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{{ MEDIA_URL }}profiles/css/profile.css" />
+{% endblock %}
+
+{% block body %}
+<p> This is a test</p>
+{% endblock %}
+
+{% block body_sidebar %}
+<p>This is the sidebar</p>
+{% endblock %}
