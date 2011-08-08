@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}" xml:lang="{{ LANGUAGE_CODE }}" lang="{{ LANGUAGE_CODE }}">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>{% block head_title_base %}{% block head_title %}Draft{% endblock %}{% endblock %}</title>
+		<style type="text/css">
+		
+			body {
+				width: 100%;
+				background-image: url('Grass_Background.png');
+				background-repeat: repeat-x;
+			}
+		
+			#topnav {
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				margin-bottom: 50px;
+				vertical-align: middle;	
+				padding-left: 10px;
+				padding-top: 5px;
+				padding-bottom: 5px;
+				
+				background: #45484d; /* Old browsers */
+				background: -moz-linear-gradient(top, #45484d 0%, #2b2b2b 100%); /* FF3.6+ */
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#45484d), color-stop(100%,#2b2b2b)); /* Chrome,Safari4+ */
+				background: -webkit-linear-gradient(top, #45484d 0%,#2b2b2b 100%); /* Chrome10+,Safari5.1+ */
+				background: -o-linear-gradient(top, #45484d 0%,#2b2b2b 100%); /* Opera11.10+ */
+				background: -ms-linear-gradient(top, #45484d 0%,#2b2b2b 100%); /* IE10+ */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#2b2b2b',GradientType=0 ); /* IE6-9 */
+				background: linear-gradient(top, #45484d 0%,#2b2b2b 100%); /* W3C */
+				
+				-moz-box-shadow: 0px 2px 8px -1px #000;
+				-webkit-box-shadow: 0px 2px 10px -50px #000;
+				box-shadow: 0px 2px 5px -2px #000;
+				z-index: 2;
+				font-family: Arial, sans-serif;
+			}
+			
+			#sidebar {
+				float: left;
+				width: 200px;
+				height: 500px;
+				background: #ffffff; /* Old browsers */
+				background: -moz-linear-gradient(left, #ffffff 0%, #e5e5e5 100%); /* FF3.6+ */
+				background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ffffff), color-stop(100%,#e5e5e5)); /* Chrome,Safari4+ */
+				background: -webkit-linear-gradient(left, #ffffff 0%,#e5e5e5 100%); /* Chrome10+,Safari5.1+ */
+				background: -o-linear-gradient(left, #ffffff 0%,#e5e5e5 100%); /* Opera11.10+ */
+				background: -ms-linear-gradient(left, #ffffff 0%,#e5e5e5 100%); /* IE10+ */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=1 ); /* IE6-9 */
+				background: linear-gradient(left, #ffffff 0%,#e5e5e5 100%); /* W3C */
+				margin: 10px 10px 10px 10px;
+				padding: 5px 5px 5px 5px;
+				
+				-moz-border-radius: 4px;
+				border-radius: 4px;
+			}
+			
+			#available {
+				float: right;
+				width: 200px;
+				height: 500px;
+				
+				background: #383838; /* Old browsers */
+				background: -moz-linear-gradient(top, #383838 0%, #1e1f21 100%); /* FF3.6+ */
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#383838), color-stop(100%,#1e1f21)); /* Chrome,Safari4+ */
+				background: -webkit-linear-gradient(top, #383838 0%,#1e1f21 100%); /* Chrome10+,Safari5.1+ */
+				background: -o-linear-gradient(top, #383838 0%,#1e1f21 100%); /* Opera11.10+ */
+				background: -ms-linear-gradient(top, #383838 0%,#1e1f21 100%); /* IE10+ */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#383838', endColorstr='#1e1f21',GradientType=0 ); /* IE6-9 */
+				background: linear-gradient(top, #383838 0%,#1e1f21 100%); /* W3C */
+				
+				-moz-box-shadow: 0px 0px 8px -1px #000;
+				-webkit-box-shadow: 0px 0px 10px #000;
+				box-shadow: 0px 0px 10px #000;
+				
+				margin: 10px 10px 10px 10px;
+				-moz-border-radius: 4px;
+				border-radius: 4px;
+				padding: 5px 5px 5px 5px;
+				text-align: center;
+			}
+			
+			#available ul {
+				margin-left: -20px;
+			}
+			
+			#available li {
+				display: inline;
+			}
+			
+			#available li a {
+				text-decoration: none;
+				color: white;
+			}
+			
+			#position_pick li {
+				background: #45484d; /* Old browsers */
+				background: -moz-linear-gradient(top, #45484d 0%, #2b2b2b 100%); /* FF3.6+ */
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#45484d), color-stop(100%,#2b2b2b)); /* Chrome,Safari4+ */
+				background: -webkit-linear-gradient(top, #45484d 0%,#2b2b2b 100%); /* Chrome10+,Safari5.1+ */
+				background: -o-linear-gradient(top, #45484d 0%,#2b2b2b 100%); /* Opera11.10+ */
+				background: -ms-linear-gradient(top, #45484d 0%,#2b2b2b 100%); /* IE10+ */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#2b2b2b',GradientType=0 ); /* IE6-9 */
+				background: linear-gradient(top, #45484d 0%,#2b2b2b 100%); /* W3C */
+				
+				margin: 5px;
+				float: left;
+				-moz-border-radius: 4px;
+				border-radius: 4px;
+				width: 40px;
+				height: 20px;
+				text-align: center;
+				vertical-align: middle;
+				color: white;
+				
+				-moz-box-shadow: 2px 2px 8px -1px #000;
+				-webkit-box-shadow: 2px 2px 10px -50px #000;
+				box-shadow: 2px 2px 5px -2px #000;
+				
+				text-shadow: 0px -1px 0px #000;
+			}
+			
+			#position_pick li:hover {
+				text-shadow: 0 0 0.2em #FFF;
+			}
+			
+			#position_pick ui-selecting {
+				
+			}
+			
+			#position_pick ui-selected {
+				-moz-box-shadow: 0 0 10px #000;
+				-webkit-box-shadow: 0 0 10px #000;
+				box-shadow: 0 0 10px #000;
+				text-shadow: 0 0 0.2em #FFF;
+			}
+			
+			#position_results {
+				width: 90%;
+				height: 75%;
+				margin: auto;
+				margin-top: 10px;
+				
+				-moz-box-shadow:inset 0px 0px 5px #000;
+				-webkit-box-shadow:inset 0px 0px 5px #000;
+				box-shadow:inset 0px 0px 5px #000;
+				
+				-moz-border-radius: 4px;
+				border-radius: 4px;
+				
+				background: #5e5e5e; /* Old browsers */
+				background: -moz-linear-gradient(top, #5e5e5e 0%, #444444 100%); /* FF3.6+ */
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#5e5e5e), color-stop(100%,#444444)); /* Chrome,Safari4+ */
+				background: -webkit-linear-gradient(top, #5e5e5e 0%,#444444 100%); /* Chrome10+,Safari5.1+ */
+				background: -o-linear-gradient(top, #5e5e5e 0%,#444444 100%); /* Opera11.10+ */
+				background: -ms-linear-gradient(top, #5e5e5e 0%,#444444 100%); /* IE10+ */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5e5e5e', endColorstr='#444444',GradientType=0 ); /* IE6-9 */
+				background: linear-gradient(top, #5e5e5e 0%,#444444 100%); /* W3C */
+			}
+			
+			#recent_picks {
+				width: 90%;
+				margin: auto;
+			}
+			
+			.draft_pick {
+				display: inline;
+				width: 30px;
+				height: 40px;
+				background-color: white;
+				-moz-border-radius: 4px;
+				border-radius: 4px;
+			}
+			
+			#main_content {
+				margin-left: 220px;
+				margin-right: 220px;
+			}
+			
+			#recent_picks ul {
+				display: inline;
+				list-style: none;
+			}
+		</style>
+		
+		<script src="../../media/js/jquery.js" type="text/javascript"></script>
+		<script src="../../media/js/jquery-ui.js" type="text/javascript"></script>
+		<script type="text/javascript">
+		$('#position_pick').selectable();
+		
+		</script>
+    </head>
+
+	<body>
+		<div id="topnav">
+			<img src="Name_Logo.png" align="middle" />
+		</div>
+		
+		<div id="sidebar">
+			<img src="" />
+			<h4>Chris</h4>
+			<p>This is just some test content.</p>
+			<h5>Team</h5>
+			<p>This is who is on the team</p>
+		</div>
+		
+		<div id="available">
+			<ul id="position_pick">
+				<li>QB</li>
+				<li>RB</li>
+				<li>WR</li>
+				<li>TE</li>
+				<li>K</li>
+				<li>DEF</li>
+			</ul>
+			<input type="text" name="search" value="Search" />
+			<div id="position_results"></div>
+		</div>
+		
+		<div id="main_content">
+			<div id="recent_picks">
+				<ul>
+					<li id="previous_pick" class="draft_pick"></li>
+					<li id="current_pick" class="draft_pick"></li>
+					<li id="next_pick" class="draft_pick"></li>
+				</ul>
+			</div>
+		
+			<div id="draftboard">
+				<h2>Draft Board</h2>
+				<table>
+					<thead>
+						<tr><th>Pick</th><th>Team</th><th>Player</th><th>Position</th></tr>
+					</thead>			
+					<tbody>	
+						<tr><td>1</td><td>Team</td><td>Player</td><td>Position</td></tr>
+						<tr><td>2</td><td>Team</td><td>Player</td><td>Position</td></tr>
+						<tr><td>3</td><td>Team</td><td>Player</td><td>Position</td></tr>
+						<tr><td>4</td><td>Team</td><td>Player</td><td>Position</td></tr>
+						<tr><td>5</td><td>Team</td><td>Player</td><td>Position</td></tr>
+						<tr><td>6</td><td>Team</td><td>Player</td><td>Position</td></tr>
+						<tr><td>7</td><td>Team</td><td>Player</td><td>Position</td></tr>
+						<tr><td>8</td><td>Team</td><td>Player</td><td>Position</td></tr>
+						<tr><td>9</td><td>Team</td><td>Player</td><td>Position</td></tr>
+						<tr><td>10</td><td>Team</td><td>Player</td><td>Position</td></tr>
+						<tr><td>11</td><td>Team</td><td>Player</td><td>Position</td></tr>
+						<tr><td>12</td><td>Team</td><td>Player</td><td>Position</td></tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		
+		<div id="footer"></div>
+	</body>
+</html>
