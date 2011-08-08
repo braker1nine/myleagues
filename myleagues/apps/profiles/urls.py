@@ -1,7 +1,6 @@
 from django.conf.urls.defaults import *
 
 
-
 urlpatterns = patterns("",
     url(r"^username_autocomplete/$", "pinax.apps.autocomplete_app.views.username_autocomplete_friends", name="profile_username_autocomplete"),
     url(r"^$", "pinax.apps.profiles.views.profiles", name="profile_list"),
