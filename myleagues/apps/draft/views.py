@@ -1,7 +1,8 @@
 from django.shortcuts import render_to_response
+from django.template import RequestContext
 
 def draft_page(request, league_id):
-	return render_to_response('draft.html')
+	return render_to_response('draft/draft.html', context_instance=RequestContext(request))
 	
 	
 # Displays the current users team on the left sidebar

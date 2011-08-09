@@ -19,11 +19,7 @@ class Profile(models.Model):
         null = True,
         blank = True
     )
-    website = models.URLField(_("website"),
-        null = True,
-        blank = True,
-        verify_exists = False
-    )
+
     
     class Meta:
         verbose_name = _("profile")
