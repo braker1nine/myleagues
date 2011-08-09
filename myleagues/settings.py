@@ -15,7 +15,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 # tells Pinax to serve media through the staticfiles app.
-SERVE_MEDIA = DEBUG
+SERVE_MEDIA = True
 
 INTERNAL_IPS = [
     "127.0.0.1",
@@ -201,6 +201,10 @@ INSTALLED_APPS = [
     
     # project
     "about",
+    
+    # My Additions
+    "draft",
+    "team",
 ]
 
 FIXTURE_DIRS = [
@@ -224,7 +228,7 @@ MARKUP_CHOICES = [
 AUTH_PROFILE_MODULE = "profiles.Profile"
 NOTIFICATION_LANGUAGE_MODULE = "account.Account"
 
-ACCOUNT_OPEN_SIGNUP = True
+ACCOUNT_OPEN_SIGNUP = False
 ACCOUNT_REQUIRED_EMAIL = False
 ACCOUNT_EMAIL_VERIFICATION = False
 ACCOUNT_EMAIL_AUTHENTICATION = False
