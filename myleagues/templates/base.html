@@ -9,7 +9,7 @@
                 zoom: 1; /* trigger hasLayout */
             }
         </style><![endif]-->
-        <link rel="stylesheet" href="{{ STATIC_URL }}pinax/css/base.css" />
+        <!--<link rel="stylesheet" href="{{ STATIC_URL }}pinax/css/base.css" />-->
         <link rel="stylesheet" href="{{ STATIC_URL }}pinax/css/tabs.css" />
         <link rel="stylesheet" href="{{ STATIC_URL }}pinax/css/facebox.css" />
         <link rel="stylesheet" href="{{ STATIC_URL }}pinax/css/announcements.css" />
@@ -44,33 +44,35 @@
         
         <div id="topnav">{% block top_navbar %}{% endblock %}</div>
         
-        {% block body_outer %}
-        <div id="body">
-            {% if messages %}
-                <ul id="messages">
-                    {% for message in messages %}
-                    <li id="message_{{ forloop.counter }}"{% if message.tags %} class="{{ message.tags }}"{% endif %}>
-                        <a href="#"><small>{% trans "clear" %}</small></a>
-                        {{ message }}
-                    </li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
-            
-            {% block body %}
-            {% endblock %}
-            
-        </div>
-        {% endblock %}
-        
-        <div id="left_sidebar">
-        {% block left_sidebar %}
-        {% endblock %}
-        </div>
-        
-        <div id="right_sidebar">
-        {% block right_sidebar %}
-        {% endblock %}
+        <div id="wrapper" style="background-image: url('{{ STATIC_URL }}img/Sidebar.png')">
+	        <div id="left_sidebar">
+		        {% block left_sidebar %}
+		        {% endblock %}
+	        </div>
+	        
+	        <div id="right_sidebar">
+		        {% block right_sidebar %}
+		        {% endblock %}
+	        </div>
+	        
+	        {% block body_outer %}
+		        <div id="body">
+		            <!--{% if messages %}
+		                <ul id="messages">
+		                    {% for message in messages %}
+		                    <li id="message_{{ forloop.counter }}"{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+		                        <a href="#"><small>{% trans "clear" %}</small></a>
+		                        {{ message }}
+		                    </li>
+		                    {% endfor %}
+		                </ul>
+		            {% endif %}-->
+		            
+		            {% block body %}
+		            {% endblock %}
+		            
+		        </div>
+	        {% endblock %}
         </div>
         
         <div id="footer">{% block footer %}{% endblock %}</div>

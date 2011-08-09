@@ -12,13 +12,13 @@
 {% load threadedcommentstags %}
 
 {% block extra_head %}
-<link rel="stylesheet" href="{{ MEDIA_URL }}profiles/css/profile.css" />
+<link rel="stylesheet" href="{{ STATIC_URL }}profiles/css/profile.css" />
 {% endblock %}
 
 {% block body %}
-<p> This is a test</p>
+<!-- This is where we need to show stream? -->
 {% endblock %}
 
-{% block body_sidebar %}
+{% block left_sidebar %}
 <p>This is the sidebar</p>
 {% endblock %}
