@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="{{ STATIC_URL }}pinax/css/announcements.css" />
         <link rel="stylesheet" href="{{ STATIC_URL }}pinax/css/accounts.css" />
         <link rel="stylesheet" href="{{ STATIC_URL }}uni_form/uni-form.css" />
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/main.css" />
         {% if LANGUAGE_BIDI %}
         <style type="text/css" media="screen">
             div.right_panel {
@@ -41,14 +42,7 @@
             </div>
         {% endif %}
         
-        <div id="topnavbar">{% block top_navbar %}{% endblock %}</div>
-        <div id="tabhead">
-            <div class="logo" dir="ltr">{% block logo_link_image %}{% endblock %}</div>
-            <div class="login">{% block login %}{% endblock %}<div style="text-align: right;"></div></div>
-            <div id="left_tabs" >{% block left_tabs %}{% endblock %}</div>
-            <div id="right_tabs" >{% block right_tabs %}{% endblock %}</div>
-        </div>
-        <div id="subnav" class="clearfix">{% block subnav_base %}<div class="clearfix">{% block subnav %}&nbsp;{% endblock %}</div>{% endblock %}</div>
+        <div id="topnav">{% block top_navbar %}{% endblock %}</div>
         
         {% block body_outer %}
         <div id="body">
@@ -69,8 +63,13 @@
         </div>
         {% endblock %}
         
-        <div id="sidebar">
-        {% block body_sidebar %}
+        <div id="left_sidebar">
+        {% block left_sidebar %}
+        {% endblock %}
+        </div>
+        
+        <div id="right_sidebar">
+        {% block right_sidebar %}
         {% endblock %}
         </div>
         
