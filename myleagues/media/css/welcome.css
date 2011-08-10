@@ -1,22 +1,10 @@
 #signup_box {
 	background-repeat: no-repeat;
 	background-position: center top;
-	height: 700px;
+	margin: auto;
+	margin-top: 50px;
+	height: 600px;
 	width: 500px;
-	//-moz-box-shadow: 10px 10px 5px #000;
-	//-webkit-box-shadow: 10px 10px 5px #000;
-	//box-shadow: 0px 0px 20px #000;
-	//-moz-border-radius: 8px;
-	//border-radius: 8px;
-	//background: #ffffff; /* Old browsers */
-	/*background: -moz-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* FF3.6+ *!/
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(47%,#f6f6f6), color-stop(100%,#ededed)); /* Chrome,Safari4+ *!/
-	background: -webkit-linear-gradient(top, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Chrome10+,Safari5.1+ *!/
-	background: -o-linear-gradient(top, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Opera11.10+ *!/
-	background: -ms-linear-gradient(top, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* IE10+ *!/
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 *!/
-	background: linear-gradient(top, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* W3C *!/*/
-	
 	color: yellow;
 	padding-top: 60px;
 	padding-left: 150px;
@@ -25,32 +13,51 @@
 }
 
 
-#signup_box h2, h3, p, label {
+#signup_box h2, h3, p, label, .indicate-required, #mce-error-response, #mce-success-response {
 	font-family: 'Cabin Sketch', cursive;
 }
 
-
-#scoreboard {
-	//width: 90%;
-	//margin: auto;
-	//margin-top: 15px;
-	//height: auto;
-	//padding: 10px;
-	//background-color: #1F1E1E;
-	//color: yellow;
-	//border: 1px solid black;
-	//border-radius: 5px;
-	//text-align: center;
-	
-	/*-moz-box-shadow:inset 0px 0px 10px #000;
-	-webkit-box-shadow:inset 0px 0px 10px 10px #000;
-	box-shadow:inset 0px 0px 10px 10px #000;
-	
-	-moz-box-shadow: 0px -3px 10px #000;
-	-webkit-box-shadow: 0px -3px 10px -5px #000;
-	box-shadow: 0px -3px 10px -5px #000;*/
+.mce_inline_error, #mce-error-response, #mce-success-response {
+	font-size: 0.8em;
+	color: white;
 }
 
+.indicate-required {
+	font-size: 0.8em;
+}
+
+.btn {
+	position: absolute;
+	margin-left: 210px;
+	top: 480px;
+	width: 120px;
+	height: 40px;
+	background: #f2f5f6; /* Old browsers */
+	background: -moz-linear-gradient(top, #f2f5f6 0%, #e3eaed 37%, #c8d7dc 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f2f5f6), color-stop(37%,#e3eaed), color-stop(100%,#c8d7dc)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #f2f5f6 0%,#e3eaed 37%,#c8d7dc 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #f2f5f6 0%,#e3eaed 37%,#c8d7dc 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, #f2f5f6 0%,#e3eaed 37%,#c8d7dc 100%); /* IE10+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6', endColorstr='#c8d7dc',GradientType=0 ); /* IE6-9 */
+	background: linear-gradient(top, #f2f5f6 0%,#e3eaed 37%,#c8d7dc 100%); /* W3C */
+	border-radius: 6px;
+	border: 1px solid white;
+	transition: all 0.333s ease-in-out;
+	-webkit-transition: all 0.333s ease-in-out;
+	-moz-transition: all 0.333s ease-in-out;
+}
+
+.btn:hover {
+	-moz-box-shadow: 0px 0px 5px #FFF;
+	-webkit-box-shadow: 0px 0px 5px #FFF;
+	box-shadow: 0px 0px 5px #FFF;
+}
+
+.btn:active {
+	-moz-box-shadow:inset 0px 0px 5px #000;
+	-webkit-box-shadow:inset 0px 0px 5px #000;
+	box-shadow:inset 0px 0px 5px #000;
+}
 
 label {
 	width: 140px;
@@ -58,24 +65,51 @@ label {
 	text-align: right;
 }
 
-.mc-field-group input {
-	position: left;
+.mc-field-group {
+	margin-left: 50px;
 }
 
-div.mc_error {
-	background-color: #e45;
+.mc-field-group input {
+	position: left;
+	margin-top: 5px;
+	width: 146px;
+	background-color: #7D7D7D;
+	border: dashed 1px #CCCCCC;
+	color: white;
+}
+
+.mc-field-group input:focus {
+	-moz-box-shadow: 0px 0px 8px #FFFF75;
+	-webkit-box-shadow: 0px 0px 8px #FFFF75;
+	box-shadow: 0px 0px 8px #FFFF75;
 }
 
 #mc-tag {
+	position: absolute;
+	top: 406px;
+	margin-left: 330px;
 	font-style: italic;
 	text-align: right;
+	padding-bottom: 2px;
+	padding-right: 2px;
 }
 
 #mc-tag a {
 	text-decoration: none;
-	font-style: bold;
 	color: white;
-	font-size: .8em;
+	font-size: 1.2em;
+}
+
+#left_sidebar {
+	width: 0;
+}
+
+#right_sidebar {
+	width: 0;
+}
+
+#body {
+	margin: auto;
 }
 
 #footer {

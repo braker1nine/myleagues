@@ -7,7 +7,13 @@
 <style type="text/css">
 	#wrapper {
 		background-image: url('{{STATIC_URL}}img/Grass_Background.png');
-		background-repeat: repeat-x;
+		background-repeat: repeat;
+		overflow: hidden;
+	}
+	
+	#topnav a {
+		font-family: 'Cabin Sketch';
+		text-shadow: 0px 0px white;
 	}
 </style>
 {% endblock extra_head %}
@@ -83,8 +89,8 @@
 				<div class="response" id="mce-error-response" style="display:none"></div>
 				<div class="response" id="mce-success-response" style="display:none"></div>
 			</div>
-			<div><input type="submit" value="Notify Me!" name="subscribe" id="mc-embedded-subscribe" class="btn"></div>
 			<p id="mc-tag">Powered by <a href="http://eepurl.com/e6TYo" title="MailChimp - email marketing made easy and fun">MailChimp</a></p>
+			<div><input type="submit" value="Notify Me!" name="subscribe" id="mc-embedded-subscribe" class="btn"></div>
 			</form>
 		</div>
 		<script type="text/javascript">

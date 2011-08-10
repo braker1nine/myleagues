@@ -1,5 +1,6 @@
-
-
+html, body {
+	height: 100%;
+}
 #topnav {
 	position: fixed;
 	top: 0;
@@ -41,13 +42,14 @@
 
 
 #wrapper {
-	padding-top: 50px;
-	min-height: 100%;
-	background-repeat: repeat-y;
+	padding-top: 30px;
 	background-position: left top;
+	min-height: 100%;
+	margin-top: 40px;
 	margin-left: -8px;
 	margin-right: -8px;
 	z-index: 1;
+	height: auto;
 }
 
 #left_sidebar {
@@ -62,17 +64,12 @@
 }
 
 
-#footer {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	height: 100px;
+/*#footer {
 	clear: both;
 	background-color: black;
 	width: auto;
 	z-index: 2;
-}
+}*/
 
 
 
