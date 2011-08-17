@@ -9,38 +9,63 @@
 
 		
 {% block left_sidebar %}
+	<img src="{{ STATIC_URL }}img/profile.png" class="profile_img" />
 	<h4>Chris</h4>
 	<p>This is just some test content.</p>
 	<h5>Team</h5>
 	<p>This is who is on the team</p>
 {% endblock left_sidebar %}
 		
-{% block right_sidebar %}
-	<ul id="position_pick">
-		<li>QB</li>
-		<li>RB</li>
-		<li>WR</li>
-		<li>TE</li>
-		<li>K</li>
-		<li>DEF</li>
-	</ul>
-	<input type="text" name="search" value="Search" />
-	<div id="position_results"></div>
-{% endblock right_sidebar %}
 
 {% block body %}
 
-	<div id="recent_picks">
-		<ul>
-			<li id="previous_pick" class="draft_pick"></li>
-			<li id="current_pick" class="draft_pick"></li>
-			<li id="next_pick" class="draft_pick"></li>
-		</ul>
+	<div id="recent_picks" style="background-image: url('{{STATIC_URL}}img/Grass_Background.png'); repeat:repeat-x; background-position: -160px -100px">
+		<h3>Recent Picks</h3>
+		<div id="pick_inner">
+				<div id="previous_pick" class="draft_pick">
+				<span class="pick_title">Previous Pick</span>
+				<br />
+				<img src="{{ STATIC_URL }}img/profile.png" class="profile_img" />
+				</div>
+				
+				<div id="current_pick" class="draft_pick">
+				<span class="pick_title">Current Pick</span>
+				<br />
+				<img src="{{ STATIC_URL }}img/profile.png" class="profile_img" />
+				</div>
+				
+				<div id="next_pick" class="draft_pick">
+				<span class="pick_title">Next Pick</span>
+				<br />
+				<img src="{{ STATIC_URL }}img/profile.png" class="profile_img" />
+				</div>
+		</div>
 	</div>
 
-	<div id="draftboard">
+	<div id="draftboard" style="background-image: url('{{STATIC_URL}}img/Grass_Background.png'); repeat:repeat-x; background-position: -160px -250px">
 		<h2>Draft Board</h2>
-		<table>
+		<br />
+		<div id="round_selection">
+			<span>Round</span>
+			<ul class="rounds">
+				<li><a href="#" class="current">1</a></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">3</a></li>
+				<li><a href="#">4</a></li>
+				<li><a href="#">5</a></li>
+				<li><a href="#">6</a></li>
+				<li><a href="#">7</a></li>
+				<li><a href="#">8</a></li>
+				<li><a href="#">9</a></li>
+				<li><a href="#">10</a></li>
+				<li><a href="#">11</a></li>
+				<li><a href="#">12</a></li>
+				<li><a href="#">13</a></li>
+				<li><a href="#">14</a></li>
+			</ul>
+		</div>
+		<div id="draft_rounds">
+		<table class="round">
 			<thead>
 				<tr><th>Pick</th><th>Team</th><th>Player</th><th>Position</th></tr>
 			</thead>			
@@ -59,5 +84,269 @@
 				<tr><td>12</td><td>Team</td><td>Player</td><td>Position</td></tr>
 			</tbody>
 		</table>
+		<table class="round" style="display:none;">
+			<thead>
+				<tr><th>Pick</th><th>Team</th><th>Player</th><th>Position</th></tr>
+			</thead>			
+			<tbody>	
+				<tr><td>1</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>2</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>3</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>4</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>5</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>6</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>7</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>8</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>9</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>10</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>11</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>12</td><td>Team</td><td>Player</td><td>Position</td></tr>
+			</tbody>
+		</table>
+		<table class="round" style="display:none;">
+			<thead>
+				<tr><th>Pick</th><th>Team</th><th>Player</th><th>Position</th></tr>
+			</thead>			
+			<tbody>	
+				<tr><td>1</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>2</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>3</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>4</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>5</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>6</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>7</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>8</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>9</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>10</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>11</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>12</td><td>Team</td><td>Player</td><td>Position</td></tr>
+			</tbody>
+		</table>
+		<table class="round" style="display:none;">
+			<thead>
+				<tr><th>Pick</th><th>Team</th><th>Player</th><th>Position</th></tr>
+			</thead>			
+			<tbody>	
+				<tr><td>1</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>2</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>3</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>4</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>5</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>6</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>7</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>8</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>9</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>10</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>11</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>12</td><td>Team</td><td>Player</td><td>Position</td></tr>
+			</tbody>
+		</table>
+		<table class="round" style="display:none;">
+			<thead>
+				<tr><th>Pick</th><th>Team</th><th>Player</th><th>Position</th></tr>
+			</thead>			
+			<tbody>	
+				<tr><td>1</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>2</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>3</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>4</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>5</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>6</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>7</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>8</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>9</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>10</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>11</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>12</td><td>Team</td><td>Player</td><td>Position</td></tr>
+			</tbody>
+		</table>
+		<table class="round" style="display:none;">
+			<thead>
+				<tr><th>Pick</th><th>Team</th><th>Player</th><th>Position</th></tr>
+			</thead>			
+			<tbody>	
+				<tr><td>1</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>2</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>3</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>4</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>5</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>6</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>7</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>8</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>9</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>10</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>11</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>12</td><td>Team</td><td>Player</td><td>Position</td></tr>
+			</tbody>
+		</table>
+		<table class="round" style="display:none;">
+			<thead>
+				<tr><th>Pick</th><th>Team</th><th>Player</th><th>Position</th></tr>
+			</thead>			
+			<tbody>	
+				<tr><td>1</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>2</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>3</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>4</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>5</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>6</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>7</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>8</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>9</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>10</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>11</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>12</td><td>Team</td><td>Player</td><td>Position</td></tr>
+			</tbody>
+		</table>
+		<table class="round" style="display:none;">
+			<thead>
+				<tr><th>Pick</th><th>Team</th><th>Player</th><th>Position</th></tr>
+			</thead>			
+			<tbody>	
+				<tr><td>1</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>2</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>3</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>4</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>5</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>6</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>7</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>8</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>9</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>10</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>11</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>12</td><td>Team</td><td>Player</td><td>Position</td></tr>
+			</tbody>
+		</table>
+		<table class="round" style="display:none;">
+			<thead>
+				<tr><th>Pick</th><th>Team</th><th>Player</th><th>Position</th></tr>
+			</thead>			
+			<tbody>	
+				<tr><td>1</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>2</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>3</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>4</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>5</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>6</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>7</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>8</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>9</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>10</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>11</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>12</td><td>Team</td><td>Player</td><td>Position</td></tr>
+			</tbody>
+		</table>
+		<table class="round" style="display:none;">
+			<thead>
+				<tr><th>Pick</th><th>Team</th><th>Player</th><th>Position</th></tr>
+			</thead>			
+			<tbody>	
+				<tr><td>1</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>2</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>3</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>4</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>5</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>6</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>7</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>8</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>9</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>10</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>11</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>12</td><td>Team</td><td>Player</td><td>Position</td></tr>
+			</tbody>
+		</table>
+		<table class="round" style="display:none;">
+			<thead>
+				<tr><th>Pick</th><th>Team</th><th>Player</th><th>Position</th></tr>
+			</thead>			
+			<tbody>	
+				<tr><td>1</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>2</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>3</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>4</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>5</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>6</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>7</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>8</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>9</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>10</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>11</td><td>Team</td><td>Player</td><td>Position</td></tr>
+				<tr><td>12</td><td>Team</td><td>Player</td><td>Position</td></tr>
+			</tbody>
+		</table>
+		</div>
 	</div>
+	<form id="gogo">
+	<input type="submit" name="view" value="Show View" />
+	</form>
+	<div id="modal_side"></div>
 {% endblock body %}
+
+{% block right_sidebar %}
+
+	<ul id="position_pick">
+		<li><a href="">QB</a></li>
+		<li><a href="">RB</a></li>
+		<li><a href="">WR</a></li>
+		<li><a href="">TE</a></li>
+		<li><a href="">K</a></li>
+		<li><a href="">DEF</a></li>
+	</ul>
+
+	<input type="text" name="search" value="Search" id="player_search_box"/>
+	<div id="position_results"></div>
+{% endblock %}
+
+{% block extra_body %}
+<script type="text/javascript">
+$(function () {
+	$('#round_selection .rounds li a').click(function() {
+		var num = $(this).text();
+		var prev = $('.rounds li .current').text();
+		
+		$(".rounds li .current").removeClass('current');
+		$("#round_selection .rounds").children().eq(num-1).children().addClass('current');
+		
+		if (prev > num)
+		{
+			
+		} else if (num > prev)
+		{
+			
+		}
+	});
+	
+	$('td').click(function () {
+		$('#modal_side').show("slide", {direction: "right", mode: "show"}, 500);
+	});
+	
+	$('.draft_pick').click(function() {
+		//$('#previous_pick').fadeTo('normal', 0, function (){
+		
+		//});
+		$('#previous_pick').hide("slide", {direction: "left", mode: "hide"}, 'normal');
+		$('#current_pick').attr("id", "previous_pick");
+		$('#next_pick').attr("id", "current_pick");
+		
+		$('.draft_pick h3').fadeTo('normal', 0, function() {
+		});
+		$('#previous_pick h3').text("Previous Pick");
+		$('#current_pick h3').text("Current Pick");
+		$('.draft_pick h3').fadeTo('normal', 1, function () {
+		
+		});
+		
+		$('#pick_inner').append('<div class="draft_pick" id="next_pick><h3>Next Pick</h3></div">');
+	});
+	
+});
+
+function slideLeft(initial, final){
+
+}
+
+function slideRight(initial, final){
+
+}
+</script>
+{% endblock %}
