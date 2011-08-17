@@ -1,0 +1,151 @@
+
+/* Left Sidebar */
+#left_sidebar .profile_img {
+	width: 50px;
+	height: 50px;
+	
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	
+	-moz-box-shadow: 0px 0px 4px -1px #000;
+	-webkit-box-shadow: 0px 0px 4px -1px #000;
+	box-shadow: 0px 0px 4px -1px #000;
+	
+}
+
+/* Right Sidebar */
+
+
+
+/* Body */
+#body {
+	min-height: 700px;
+}
+
+#body table {
+	width: 98%;
+	margin: auto;
+	
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	
+}
+
+td {
+	text-align: center;
+	vertical-align: middle;
+}
+
+td > a {
+	display: inline-block;
+	width: 100%;
+	height: 30px;
+	
+	background: rgb(176,212,227); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(176,212,227,1) 0%, rgba(136,186,207,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(176,212,227,1)), color-stop(100%,rgba(136,186,207,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(176,212,227,1) 0%,rgba(136,186,207,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(176,212,227,1) 0%,rgba(136,186,207,1) 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, rgba(176,212,227,1) 0%,rgba(136,186,207,1) 100%); /* IE10+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b0d4e3', endColorstr='#88bacf',GradientType=0 ); /* IE6-9 */
+	background: linear-gradient(top, rgba(176,212,227,1) 0%,rgba(136,186,207,1) 100%); /* W3C */
+}
+
+#body table thead {
+	font-size: 0.8em;
+	background: rgb(226,226,226); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(226,226,226,1)), color-stop(50%,rgba(219,219,219,1)), color-stop(51%,rgba(209,209,209,1)), color-stop(100%,rgba(254,254,254,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* IE10+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe',GradientType=0 ); /* IE6-9 */
+	background: linear-gradient(top, rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* W3C */
+}
+
+#body table tbody {
+	font-size: 0.7em;
+}
+
+
+tr.filler{
+	height: 10px;
+	background: none;
+	border: none;
+}
+
+.table_row {
+	list-style: none;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	margin: 0;
+	
+	text-align: center;
+	width: 95%;
+	
+	height: 30px;
+	background: rgb(176,212,227); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(176,212,227,1) 0%, rgba(136,186,207,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(176,212,227,1)), color-stop(100%,rgba(136,186,207,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(176,212,227,1) 0%,rgba(136,186,207,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(176,212,227,1) 0%,rgba(136,186,207,1) 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, rgba(176,212,227,1) 0%,rgba(136,186,207,1) 100%); /* IE10+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b0d4e3', endColorstr='#88bacf',GradientType=0 ); /* IE6-9 */
+	background: linear-gradient(top, rgba(176,212,227,1) 0%,rgba(136,186,207,1) 100%); /* W3C */
+	
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	
+	font-size: 0.6em;
+}
+
+.table_row .player {
+	width: 10%;
+}
+
+.table_row .position {
+	width: 7%;
+}
+
+.table_row .team {
+	width: 10%;
+}
+
+.table_row .opponent {
+	width: 10%;
+}
+
+.table_row .start {
+	width: 7%;
+}
+
+.table_row .passing {
+	width: 12%;
+}
+
+.table_row .rushing {
+	width: 12%;
+}
+
+.table_row .receiving {
+	width: 12%;
+}
+
+.table_row .return {
+	width: 8%;
+}
+
+.table_row .misc {
+	width: 5%;
+}
+
+.table_row .points {
+	width: 7%;
+}
+
+.table_row > div {
+	display: inline-block;
+	border: 1px solid black;
+	height: 100%;
+	vertical-align: middle;
+}

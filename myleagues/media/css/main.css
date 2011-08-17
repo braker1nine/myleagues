@@ -1,12 +1,7 @@
-html, body {
-	height: 100%;
-}
+@import url(http://fonts.googleapis.com/css?family=Nova+Flat);
+
+/* Header CSS */
 #topnav {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	vertical-align: middle;	
 	padding-left: 10px;
 	padding-top: 5px;
 	padding-bottom: 5px;
@@ -23,7 +18,7 @@ html, body {
 	-webkit-box-shadow: 0px 2px 10px -50px #000;
 	box-shadow: 0px 2px 5px -2px #000;
 	z-index: 3;
-	font-family: Arial, sans-serif;
+	font-family: 'Cabin Sketch', sans-serif;
 }
 
 #nav_logo {
@@ -33,43 +28,134 @@ html, body {
 	font-size: 1.6em;
 }
 
-
 #topnav h1, h2 {
 	display: inline;
 	color: white;
-	text-shadow: -1px -1px black;
 }
 
+.goalpost {
+	color: yellow;
+	font-family: 'Nova Flat', cursive;
+	//font-size: 0.9em;
+}
+
+/* Layout Foundation */
+
+html, body {
+	height: 100%;
+}
+
+body{
+	margin: 0;
+}
 
 #wrapper {
-	padding-top: 30px;
-	background-position: left top;
-	min-height: 100%;
-	margin-top: 40px;
-	margin-left: -8px;
-	margin-right: -8px;
-	z-index: 1;
-	height: auto;
+  	float:left;
+  	width:100%;
+  	min-height: 100%;
+  	height: auto !important;
+  	height: 100%;	
+  	margin-left: 0;
+  	margin-right: 0;
+  	margin-bottom: -40px;
+  	z-index: 1;
+  	//display:inline; /* So IE plays nice */
+  	
+  	background: #eeeeee; /* Old browsers */
+  	background: -moz-linear-gradient(top, #eeeeee 0%, #cccccc 100%); /* FF3.6+ */
+  	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eeeeee), color-stop(100%,#cccccc)); /* Chrome,Safari4+ */
+  	background: -webkit-linear-gradient(top, #eeeeee 0%,#cccccc 100%); /* Chrome10+,Safari5.1+ */
+  	background: -o-linear-gradient(top, #eeeeee 0%,#cccccc 100%); /* Opera11.10+ */
+  	background: -ms-linear-gradient(top, #eeeeee 0%,#cccccc 100%); /* IE10+ */
+  	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */
+  	background: linear-gradient(top, #eeeeee 0%,#cccccc 100%); /* W3C */
+}
+#left_sidebar {
+  	float:left;
+  	width:150px;
+  	padding: 10px;
 }
 
-#left_sidebar {
-	float: left;
-	width: 200px;
+.push {
+	height: 40px;
 }
 
 #body {
-	margin-left: 220px;
-	margin-right: 220px;
-	text-align: center;
+  	background-color: white;
+  	margin-left: 175px;
+  	margin-right: 175px;
+  	padding: 20px;
+  	height: 100%;
+  
+  	-moz-box-shadow: 0px 2px 5px -2px #000;
+  	-webkit-box-shadow: 0px 2px 5px -2px #000;
+  	box-shadow: 0px 2px 5px -2px #000;
+  	
 }
 
+#right_sidebar {
+  float:right;
+  width:150px;  
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px; 
+}
 
-/*#footer {
+/*Previous Crap */
+/*#wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 97%;
+	margin: 0 auto -50px; // bottom is negative of footer's height
+	position: relative;
+}
+
+#body {
+	width: auto;
+	margin: auto;
+	text-align: center;
+	padding-right: 200px;
+	height: 100%;
+}*/
+
+/*#left_sidebar {
+	position: absolute;
+	width: 200px;
+	left: 0;
+	top: 20px;
+	bottom: 0;
+	padding: 5px 5px 5px 5px;
+	background: #eeeeee; /* Old browsers *!/
+	background: -moz-linear-gradient(top, #eeeeee 0%, #cccccc 100%); /* FF3.6+ *!/
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eeeeee), color-stop(100%,#cccccc)); /* Chrome,Safari4+ *!/
+	background: -webkit-linear-gradient(top, #eeeeee 0%,#cccccc 100%); /* Chrome10+,Safari5.1+ *!/
+	background: -o-linear-gradient(top, #eeeeee 0%,#cccccc 100%); /* Opera11.10+ *!/
+	background: -ms-linear-gradient(top, #eeeeee 0%,#cccccc 100%); /* IE10+ *!/
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 *!/
+	background: linear-gradient(top, #eeeeee 0%,#cccccc 100%); /* W3C *!/
+	
+	-moz-box-shadow:inset 0px 2px 5px -2px #000;
+	-webkit-box-shadow:inset 0px 2px 5px -2px #000;
+	box-shadow:inset 0px 2px 5px -2px #000;
+	border: solid 1px #A1A1A1;
+	z-index: 1;
+}
+
+.push {
 	clear: both;
+	height: 1px;
+}*/
+
+#footer {
+	clear: left;
 	background-color: black;
+	height: 40px;
 	width: auto;
 	z-index: 2;
-}*/
+	-moz-box-shadow: 0px 2px 5px -2px #000;
+	-webkit-box-shadow: 0px 2px 5px -2px #000;
+	box-shadow: 0px 2px 5px -2px #000;
+}
 
 
 
