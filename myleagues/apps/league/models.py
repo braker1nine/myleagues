@@ -1,6 +1,9 @@
 from django.db import models
 
-# Create your models here.
+from idios.models import ProfileBase
+
+class UserProfile(ProfileBase):
+	#name = 
 
 # Might just put these fields in the league class?
 class Positions(models.Model):
@@ -102,6 +105,7 @@ class Team(models.Model):
 	name = models.CharField(max_length=30)
 	avatar = models.FilePathField
 	league = models.ForeignKey(League)
+	user = models.ForeignKey(UserProfile)
 	
 	def __unicode__(self):
 		return u'%s' % self.name
