@@ -25,6 +25,8 @@ from pinax.apps.profiles.forms import ProfileForm
 from pinax.apps.profiles.models import Profile
 
 
+def profile_view(request, username):
+	return render_to_response("profile.html", context_instance=RequestContext(request))
 
 def profiles(request, template_name="profiles/profiles.html", extra_context=None):
     if extra_context is None:
