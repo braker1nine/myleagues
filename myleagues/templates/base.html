@@ -21,6 +21,7 @@
             div.right_panel {
                 float: left; /* hotfix for sidebar */
             }
+            
         </style>
         {% endif %}
         {% block extra_head_base %}
@@ -28,7 +29,7 @@
         {% endblock %}
     </head>
     
-    <body class="{% block body_class %}{% endblock %}">
+    <body class="{% block body_class %}{% endblock %}" style="background: url('{{ STATIC_URL }}img/linen_tall.png') repeat;">
         <!--{% if site_wide_announcements %}
             <div id="site_wide_announcements">
                 <ul>
