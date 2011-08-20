@@ -64,10 +64,10 @@ urlpatterns = patterns("",
     #url(r"^locations/", include("locations.urls")),
     #url(r"^feeds/tweets/(.*)/$", "django.contrib.syndication.views.feed", tweets_feed_dict),
     #url(r"^feeds/bookmarks/(.*)/?$", "django.contrib.syndication.views.feed", bookmarks_feed_dict),
-    #url(r"^league/(?P<league_id>[a-zA-Z0-9_]{5,30})/team/(?P<team_id>[a-zA-Z0-9_]{5,30})/$", team_page),
-    #url(r"^league/(?P<league_id>[a-zA-Z0-9_]{5,30})/draft/$", draft_page),
-    #url(r"^league/(?P<league_id>[a-zA-Z0-9_]{5,30})/$", league_page),
-    #url(r"^user/(?P<username>[a-zA-Z0-9_]{5, 20})/$", profile_page
+    url(r"^league/(?P<league_id>[a-zA-Z0-9_]{5,30})/team/(?P<team_id>[a-zA-Z0-9_]{5,30})/$", team_page),
+    url(r"^league/(?P<league_id>[a-zA-Z0-9_]{5,30})/draft/$", draft_page),
+    url(r"^league/(?P<league_id>[a-zA-Z0-9_]{5,30})/$", league_page),
+    #url(r"^user/(?P<username>[a-zA-Z0-9_]{5, 20})/$", profile_page),
 )
 
 ## @@@ for now, we'll use friends_app to glue this stuff together
