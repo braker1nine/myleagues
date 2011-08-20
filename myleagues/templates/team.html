@@ -2,6 +2,11 @@
 
 {% block extra_head %}
 <link rel="stylesheet" href="{{ STATIC_URL }}css/team.css" type="text/css" />
+<style type="text/css">
+	body {
+		background: url('{{ STATIC_URL }}img/linen.png') repeat;
+	}
+</style>
 {% endblock %}
 
 {% block left_sidebar %}
@@ -15,9 +20,13 @@
 
 {% block right_sidebar %}
 
-	<h3>Recent Moves</h3>
+	<div id="recent_moves">
+	<h4>Recent Moves</h4>
+	</div>
 	
-	<h3>Player News</h3>
+	<div id="player_news">
+	<h4>Player News</h4>
+	</div>
 {% endblock %}
 
 {% block body %}
@@ -138,7 +147,7 @@
 		</tr>
 	</tbody>
 	</table>
-	
+	<!--
 	<div class="table">
 		<div class="header">
 		
@@ -263,5 +272,6 @@
 		</li>
 	
 	</div>
+	-->
 	
 {% endblock %}
