@@ -99,6 +99,9 @@ class Scoring(models.Model):
 	negative_pts = models.BooleanField(default=True)
 
 class League(models.Model):
+	name = models.CharField(max_length=30)
+	slug = models.SlugField()
+	
 	
 	
 class Team(models.Model):
@@ -110,4 +113,44 @@ class Team(models.Model):
 	def __unicode__(self):
 		return u'%s' % self.name
 		
+
+# Possibilities
+#	- Trade
+#	- Add
+#	- Drop
+#	- Add/Drop - combine the two? 
+class transaction(models.Model):
+	date = models.DateTimeField()
+
+	class Meta:
+		abstract = True
+	
+	
+class trade(transaction):
+	team1 = models.OneToOneField(Team)
+	team2 = models.OneToOneField(
+	
+
+class add(transaction):
+	team = models.OneToOneField(Team)
+	player = models.ForeignKey(Player)
+
+
+class drop(transaction):
+	team = models.OneToOneField(Team)
+	player = models.ForeignKey(Player)
+
+
 		
+
+
+
+
+
+
+
+
+
+
+
+
