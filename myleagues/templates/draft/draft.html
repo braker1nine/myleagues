@@ -9,12 +9,38 @@
 
 		
 {% block left_sidebar %}
-	<img src="{{ STATIC_URL }}img/profile.png" class="profile_img" />
+<div class="span2 columns" id="left_sidebar">
+   	<img src="{{ STATIC_URL }}img/profile.png" class="profile_img" />
 	<h4>Chris</h4>
 	<p>This is just some test content.</p>
 	<h5>Team</h5>
 	<p>This is who is on the team</p>
+</div>
 {% endblock left_sidebar %}
+
+{% block right_sidebar %}
+<div class="span3 columns" id="right_sidebar">
+
+	<table id="position_pick">
+		<tbody>
+			<tr>
+				<td><a href="#">QB</a></td>
+				<td><a href="#">RB</a></td>
+				<td><a href="#">WR</a></td>
+			</tr>
+			<tr>
+				<td><a href="#">TE</a></td>
+				<td><a href="#">K</a></td>
+				<td><a href="#">DEF</a></td>
+			</tr>
+			</tbody>
+	</table>
+	<form>
+	<input type="text" name="search" placeholder="Player Search" id="player_search_box" class="medium" />
+	</form>
+	<div id="position_results"></div>
+</div>
+{% endblock %}
 		
 
 {% block body %}
@@ -42,13 +68,13 @@
 		</div>
 	</div>
 
-	<div id="draftboard" style="background-image: url('{{STATIC_URL}}img/Grass_Background.png'); repeat:repeat-x; background-position: -160px -250px">
+	<div id="draftboard" style="background-image: url('{{STATIC_URL}}img/Grass_Background.png'); repeat:repeat-x; background-position: -160px -230px">
 		<h2>Draft Board</h2>
 		<br />
 		<div id="round_selection">
 			<span>Round</span>
 			<ul class="rounds">
-				<li><a href="#" class="current">1</a></li>
+				<li><a href="#" class="selected">1</a></li>
 				<li><a href="#">2</a></li>
 				<li><a href="#">3</a></li>
 				<li><a href="#">4</a></li>
@@ -276,9 +302,7 @@
 		</table>
 		</div>
 	</div>
-	<form id="gogo">
-	<input type="submit" name="view" value="Show View" class="hide"/>
-	</form>
+	
 	<div id="modal_side">
 		<input type="submit" name="hide_modal" value=">" />
 		<h3>QB - Peyton Manning</h3>
@@ -328,21 +352,6 @@
 	</div>
 {% endblock body %}
 
-{% block right_sidebar %}
-
-	<ul id="position_pick">
-		<li><a href="">QB</a></li>
-		<li><a href="">RB</a></li>
-		<li><a href="">WR</a></li>
-		<li><a href="">TE</a></li>
-		<li><a href="">K</a></li>
-		<li><a href="">DEF</a></li>
-	</ul>
-
-	<input type="text" name="search" value="Search" id="player_search_box"/>
-	<div id="position_results"></div>
-{% endblock %}
-
 {% block extra_body %}
 <script type="text/javascript">
 $(function () {
@@ -387,6 +396,10 @@ $(function () {
 	
 	$('#modal_side > input').click(function() {
 		$('#modal_side').hide("slide", {direction: "right", mode: "show"}, 500);
+	});
+	
+	$('#position_pick td a').click(function() {
+		$(this).toggleClass('selected', 'fast');
 	});
 	
 });
