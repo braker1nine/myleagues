@@ -119,24 +119,29 @@ class Team(models.Model):
 #	- Add
 #	- Drop
 #	- Add/Drop - combine the two? 
-class transaction(models.Model):
+class Transaction(models.Model):
 	date = models.DateTimeField()
+	league = models.ForeignKey(League)
 
 	class Meta:
 		abstract = True
 	
 	
-class trade(transaction):
-	team1 = models.OneToOneField(Team)
-	team2 = models.OneToOneField(
+class trade(Transaction):
+	offers = 
 	
+class team_trade(models.Model):
+	team = models.ForeignKey(Team)
+	players = models.ManyToManyField(Player)
+	accepted = models.BooleanField()
 
-class add(transaction):
+
+class add(Transaction):
 	team = models.OneToOneField(Team)
 	player = models.ForeignKey(Player)
 
 
-class drop(transaction):
+class drop(Transaction):
 	team = models.OneToOneField(Team)
 	player = models.ForeignKey(Player)
 

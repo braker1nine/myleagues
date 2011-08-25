@@ -16,8 +16,27 @@
 {% endblock %}
 
 {% block top_navbar %}
-	<a id="nav_logo" href="/">M<span class="goalpost">Y</span>LEAGUES</a>
-
+	<a class="logo" href="/">M<span class="goalpost">Y</span>LEAGUES</a>
+	<ul>
+		<li><a href="#">Home</a></li>
+		<li><a href="#">Friends</a></li>
+		<li><a href="#">Profile</a></li>
+		<li class="active"><a href="#">Draft</a></li>
+	</ul>
+	<form action="">
+	     <input type="text" placeholder="Search" />
+    </form>
+    <ul class="nav secondary-nav">
+	      <li class="menu">
+		        <a href="#" class="menu">Chris</a>
+		        <ul class="menu-dropdown">
+			          <li><a href="">Secondary link</a></li>
+			          <li><a href="">Something else here</a></li>
+			          <li class="divider"></li>
+			          <li><a href="">Another link</a></li>
+		        </ul>
+	      </li>
+    </ul>
 <!--<div id="site_settings">
 	<input type="text" name="site_search" placeholder="Search…" />
 </div>-->
