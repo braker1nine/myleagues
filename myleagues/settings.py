@@ -186,6 +186,7 @@ INSTALLED_APPS = [
     "django_markup",
     "tagging_ext",
     "south",
+    "idios",
 
     # Pinax
     "pinax.apps.account",
@@ -205,6 +206,7 @@ INSTALLED_APPS = [
     # My Additions
     "draft",
     "team",
+    "owner",
 ]
 
 FIXTURE_DIRS = [
@@ -225,7 +227,7 @@ MARKUP_CHOICES = [
     ("creole", u"Creole"),
 ]
 
-AUTH_PROFILE_MODULE = "profiles.Profile"
+AUTH_PROFILE_MODULE = "owner.Owner"
 NOTIFICATION_LANGUAGE_MODULE = "account.Account"
 
 ACCOUNT_OPEN_SIGNUP = False
