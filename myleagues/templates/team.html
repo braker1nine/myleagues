@@ -3,33 +3,64 @@
 {% block extra_head %}
 <link rel="stylesheet" href="{{ STATIC_URL }}css/team.css" type="text/css" />
 <style type="text/css">
-	body {
-		background: url('{{ STATIC_URL }}img/linen.png') repeat;
-	}
+.subnav ul li.active {
+	background-image: url('{{STATIC_URL}}img/down_arrow.png');
+}
 </style>
 {% endblock %}
 
+{% block subnav %}
+	<ul class="league_nav">
+		<li><a href="#">League Name</a></li>
+		<li><span>></span></li>
+		<li><span>Team Name</span></li>
+	</ul>
+	
+	<ul class="nav_items">
+		<li><a href="#">Player News</a></li>
+		<li><a href="#">Recent Moves</a></li>
+		<li class="active"><a href="#">Roster</a></li>
+	</ul>
+	<div class="clear"></div>
+{% endblock %}
+
+
 {% block left_sidebar %}
+<!--<div class="span3 columns" id="left_sidebar">
 	<img src="{{ STATIC_URL }}img/profile.png" class="profile_img" />
 	<h4>Chris</h4>
 	<p>This is just some test content.</p>
 	<h5>Team</h5>
 	<p>This is who is on the team</p>
+</div>-->
 {% endblock left_sidebar %}
 
 
-{% block right_sidebar %}
-
-	<div id="recent_moves">
-	<h4>Recent Moves</h4>
-	</div>
-	
-	<div id="player_news">
-	<h4>Player News</h4>
-	</div>
-{% endblock %}
-
 {% block body %}
+<div id="body" class="span16 columns">
+
+<img src="{{ STATIC_URL }}img/profile.png" class="profile_img" />
+<h2>The Vinegar Strokes</h2>
+
+<div id="week_selection">
+	<span>Week</span>
+	<ul class="weeks">
+		<li><a href="#" class="selected">1</a></li>
+		<li><a href="#">2</a></li>
+		<li><a href="#">3</a></li>
+		<li><a href="#">4</a></li>
+		<li><a href="#">5</a></li>
+		<li><a href="#">6</a></li>
+		<li><a href="#">7</a></li>
+		<li><a href="#">8</a></li>
+		<li><a href="#">9</a></li>
+		<li><a href="#">10</a></li>
+		<li><a href="#">11</a></li>
+		<li><a href="#">12</a></li>
+		<li><a href="#">13</a></li>
+		<li><a href="#">14</a></li>
+	</ul>
+</div>
 	<table>
 	<thead>
 		<tr>
@@ -47,9 +78,8 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr class="filler"></tr>
 		<tr>
-			<td><a href="#">Peyton Manning</a></td>
+			<td><a href="#"class="player_link">Peyton Manning</a></td>
 			<td><a href="#">QB</a></td>
 			<td><a href="#">Indianapolis Colts</a></td>
 			<td><a href="#">New Orleans Saints</a></td>
@@ -61,9 +91,8 @@
 			<td><a href="#">0</a></td>
 			<td><a href="#">55</a></td>
 		</tr>
-		<tr class="filler"></tr>
 		<tr>
-			<td><a href="#">Peyton Manning</a></td>
+			<td><a href="#"class="player_link">Peyton Manning</a></td>
 			<td><a href="#">QB</a></td>
 			<td><a href="#">Indianapolis Colts</a></td>
 			<td><a href="#">New Orleans Saints</a></td>
@@ -75,9 +104,8 @@
 			<td><a href="#">0</a></td>
 			<td><a href="#">55</a></td>
 		</tr>
-		<tr class="filler"></tr>
 		<tr>
-			<td><a href="#">Peyton Manning</a></td>
+			<td><a href="#"class="player_link">Peyton Manning</a></td>
 			<td><a href="#">QB</a></td>
 			<td><a href="#">Indianapolis Colts</a></td>
 			<td><a href="#">New Orleans Saints</a></td>
@@ -89,9 +117,8 @@
 			<td><a href="#">0</a></td>
 			<td><a href="#">55</a></td>
 		</tr>
-		<tr class="filler"></tr>
 		<tr>
-			<td><a href="#">Peyton Manning</a></td>
+			<td><a href="#"class="player_link">Peyton Manning</a></td>
 			<td><a href="#">QB</a></td>
 			<td><a href="#">Indianapolis Colts</a></td>
 			<td><a href="#">New Orleans Saints</a></td>
@@ -103,9 +130,8 @@
 			<td><a href="#">0</a></td>
 			<td><a href="#">55</a></td>
 		</tr>
-		<tr class="filler"></tr>
 		<tr>
-			<td><a href="#">Peyton Manning</a></td>
+			<td><a href="#"class="player_link">Peyton Manning</a></td>
 			<td><a href="#">QB</a></td>
 			<td><a href="#">Indianapolis Colts</a></td>
 			<td><a href="#">New Orleans Saints</a></td>
@@ -117,9 +143,8 @@
 			<td><a href="#">0</a></td>
 			<td><a href="#">55</a></td>
 		</tr>
-		<tr class="filler"></tr>
 		<tr>
-			<td><a href="#">Peyton Manning</a></td>
+			<td><a href="#"class="player_link">Peyton Manning</a></td>
 			<td><a href="#">QB</a></td>
 			<td><a href="#">Indianapolis Colts</a></td>
 			<td><a href="#">New Orleans Saints</a></td>
@@ -131,9 +156,8 @@
 			<td><a href="#">0</a></td>
 			<td><a href="#">55</a></td>
 		</tr>
-		<tr class="filler"></tr>
 		<tr>
-			<td><a href="#">Peyton Manning</a></td>
+			<td><a href="#"class="player_link">Peyton Manning</a></td>
 			<td><a href="#">QB</a></td>
 			<td><a href="#">Indianapolis Colts</a></td>
 			<td><a href="#">New Orleans Saints</a></td>
@@ -147,131 +171,5 @@
 		</tr>
 	</tbody>
 	</table>
-	<!--
-	<div class="table">
-		<div class="header">
-		
-		</div>
-		
-		<li class="table_row">
-			<div class="player"><a hre="#">Peyton Manning</a></div>
-			<div class="position"><a href="#">QB</a></div>
-			<div class="team"><a href="#">Indianapolis Colts</a></div>
-			<div class="opponent"><a href="#">New Orleans Saints</a></div>
-			<div class="start"><a href="#">100%</a></div>
-			<div class="passing"><a href="#">0</a></div>
-			<div class="running"><a href="#">0</a></div>
-			<div class="receiving"><a href="#">0</a></div>
-			<div class="return"><a href="#">0</a></div>
-			<div class="misc"><a href="#">0</a></div>
-			<div class="points"><a href="#">0</a></div>
-		</li>
-		<li class="table_row">
-			<div class="player"><a hre="#">Peyton Manning</a></div>
-			<div class="position"><a href="#">QB</a></div>
-			<div class="team"><a href="#">Indianapolis Colts</a></div>
-			<div class="opponent"><a href="#">New Orleans Saints</a></div>
-			<div class="start"><a href="#">100%</a></div>
-			<div class="passing"><a href="#">0</a></div>
-			<div class="running"><a href="#">0</a></div>
-			<div class="receiving"><a href="#">0</a></div>
-			<div class="return"><a href="#">0</a></div>
-			<div class="misc"><a href="#">0</a></div>
-			<div class="points"><a href="#">0</a></div>
-		</li>
-		<li class="table_row">
-			<div class="player"><a hre="#">Peyton Manning</a></div>
-			<div class="position"><a href="#">QB</a></div>
-			<div class="team"><a href="#">Indianapolis Colts</a></div>
-			<div class="opponent"><a href="#">New Orleans Saints</a></div>
-			<div class="start"><a href="#">100%</a></div>
-			<div class="passing"><a href="#">0</a></div>
-			<div class="running"><a href="#">0</a></div>
-			<div class="receiving"><a href="#">0</a></div>
-			<div class="return"><a href="#">0</a></div>
-			<div class="misc"><a href="#">0</a></div>
-			<div class="points"><a href="#">0</a></div>
-		</li>
-		<li class="table_row">
-			<div class="player"><a hre="#">Peyton Manning</a></div>
-			<div class="position"><a href="#">QB</a></div>
-			<div class="team"><a href="#">Indianapolis Colts</a></div>
-			<div class="opponent"><a href="#">New Orleans Saints</a></div>
-			<div class="start"><a href="#">100%</a></div>
-			<div class="passing"><a href="#">0</a></div>
-			<div class="running"><a href="#">0</a></div>
-			<div class="receiving"><a href="#">0</a></div>
-			<div class="return"><a href="#">0</a></div>
-			<div class="misc"><a href="#">0</a></div>
-			<div class="points"><a href="#">0</a></div>
-		</li>
-		<li class="table_row">
-			<div class="player"><a hre="#">Peyton Manning</a></div>
-			<div class="position"><a href="#">QB</a></div>
-			<div class="team"><a href="#">Indianapolis Colts</a></div>
-			<div class="opponent"><a href="#">New Orleans Saints</a></div>
-			<div class="start"><a href="#">100%</a></div>
-			<div class="passing"><a href="#">0</a></div>
-			<div class="running"><a href="#">0</a></div>
-			<div class="receiving"><a href="#">0</a></div>
-			<div class="return"><a href="#">0</a></div>
-			<div class="misc"><a href="#">0</a></div>
-			<div class="points"><a href="#">0</a></div>
-		</li>
-		<li class="table_row">
-			<div class="player"><a hre="#">Peyton Manning</a></div>
-			<div class="position"><a href="#">QB</a></div>
-			<div class="team"><a href="#">Indianapolis Colts</a></div>
-			<div class="opponent"><a href="#">New Orleans Saints</a></div>
-			<div class="start"><a href="#">100%</a></div>
-			<div class="passing"><a href="#">0</a></div>
-			<div class="running"><a href="#">0</a></div>
-			<div class="receiving"><a href="#">0</a></div>
-			<div class="return"><a href="#">0</a></div>
-			<div class="misc"><a href="#">0</a></div>
-			<div class="points"><a href="#">0</a></div>
-		</li>
-		<li class="table_row">
-			<div class="player"><a hre="#">Peyton Manning</a></div>
-			<div class="position"><a href="#">QB</a></div>
-			<div class="team"><a href="#">Indianapolis Colts</a></div>
-			<div class="opponent"><a href="#">New Orleans Saints</a></div>
-			<div class="start"><a href="#">100%</a></div>
-			<div class="passing"><a href="#">0</a></div>
-			<div class="running"><a href="#">0</a></div>
-			<div class="receiving"><a href="#">0</a></div>
-			<div class="return"><a href="#">0</a></div>
-			<div class="misc"><a href="#">0</a></div>
-			<div class="points"><a href="#">0</a></div>
-		</li>
-		<li class="table_row">
-			<div class="player"><a hre="#">Peyton Manning</a></div>
-			<div class="position"><a href="#">QB</a></div>
-			<div class="team"><a href="#">Indianapolis Colts</a></div>
-			<div class="opponent"><a href="#">New Orleans Saints</a></div>
-			<div class="start"><a href="#">100%</a></div>
-			<div class="passing"><a href="#">0</a></div>
-			<div class="running"><a href="#">0</a></div>
-			<div class="receiving"><a href="#">0</a></div>
-			<div class="return"><a href="#">0</a></div>
-			<div class="misc"><a href="#">0</a></div>
-			<div class="points"><a href="#">0</a></div>
-		</li>
-		<li class="table_row">
-			<div class="player"><a hre="#">Peyton Manning</a></div>
-			<div class="position"><a href="#">QB</a></div>
-			<div class="team"><a href="#">Indianapolis Colts</a></div>
-			<div class="opponent"><a href="#">New Orleans Saints</a></div>
-			<div class="start"><a href="#">100%</a></div>
-			<div class="passing"><a href="#">0</a></div>
-			<div class="running"><a href="#">0</a></div>
-			<div class="receiving"><a href="#">0</a></div>
-			<div class="return"><a href="#">0</a></div>
-			<div class="misc"><a href="#">0</a></div>
-			<div class="points"><a href="#">0</a></div>
-		</li>
-	
-	</div>
-	-->
-	
+</div>
 {% endblock %}
