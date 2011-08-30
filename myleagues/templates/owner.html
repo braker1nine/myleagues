@@ -6,14 +6,42 @@
 <link rel="stylesheet" href="{{ STATIC_URL }}owner/css/owner.css" type="text/css" />
 {% endblock extra_head %}
 
-
+{% block subnav %}
+	<!--<ul class="league_nav">
+		<li><a href="#">League Name</a></li>
+		<li><span>></span></li>
+		<li><span>Team Name</span></li>
+	</ul>-->
+	
+	<ul class="nav_items">
+		<li><a href="#">Players</a></li>
+		<li><a href="#">History</a></li>
+		<li class="active"><a href="#">Profile</a></li>
+	</ul>
+	<div class="clear"></div>
+{% endblock %}
 		
 {% block left_sidebar %}
 <div class="span3 columns" id="left_sidebar">
 	<h3 class="name">Chris Brakebill</h3>
    	<img src="{{ STATIC_URL }}img/profile.png" class="profile_img" />
-	<p>This is just some test content.</p>
-	<h5>Teams</h5>
+   	
+	<!--<img src="{{ STATIC_URL }}img/social/icon-facebook-32.png" />
+	<img src="{{ STATIC_URL }}img/social/icon-twitter-32.png" />-->
+	
+	<!--<img src="{{ STATIC_URL }}img/social/facebook.png" width="32px" />
+	<img src="{{ STATIC_URL }}img/social/twitter.png" width="32px" />-->
+	
+	<!--<img src="{{ STATIC_URL }}img/social/facebook1.png" width="32px" />
+	<img src="{{ STATIC_URL }}img/social/twitter1.png" width="32px" />-->
+	
+	<a href="http://www.facebook.com/chris.brakebill"><img src="{{ STATIC_URL }}img/social/facebook2.png" /></a>
+	<a href="http://www.twitter.com/chrisbrakebill"><img src="{{ STATIC_URL }}img/social/twitter2.png" /></a>
+	
+	<ul class="pills">
+		<li class="active"><a href"#">Teams</a></li>
+		<li><a href="#">Leagues</a></li>
+	</ul>
 	<ul class="teams">
 		<li>The Vinegar Strokes</li>
 		<li>The Great Vizzini</li>
@@ -22,89 +50,57 @@
 </div>
 {% endblock left_sidebar %}
 
-{% block right_sidebar %}
-<div class="span3 columns" id="right_sidebar">
-<p>This is only a test</p>
-	
-</div>
-{% endblock %}
 		
 
 {% block body %}
+<div class="span13 columns" id="body">
 	<div class="information">
 	
 	</div>
 	
-	<div class="post_update">
+	<div class="post_update feed_item">
 		<form>
 			<textarea placeholder="Got somethin' to say?" class="xxlarge" cols="20"></textarea>
+			<br />
 			<input type="submit" name="share" value="Share" class="btn" />
 			
 		</form>
 	</div>
 	
-	<div class="status_update">
-	
+	<div class="status_update feed_item">
+		<img src="{{ STATIC_URL }}img/profile.png" class="profile_img" />
+		<h5><a href="#">Chris Brakebill</a></h5>
+		<p>This is the status text and I'm really a big fan of <a href="#" class="player_link">Michael Vick</a></p>
 	</div>
 	
-	<div class="trade">
+	<div class="trade feed_item">
+		<img src="{{ STATIC_URL }}img/profile.png" class="profile_img" />
+		<img src="{{ STATIC_URL }}img/profile.png" class="profile_img other" />
+		<h5><a href="#">Chris Brakebill</a></h5>
+		<p>made a trade with <a href="#">Chris Brakebill</a> in the league <a href="#">Dooley Dozen</a>.</p>
+		<div class="trade_self span4 columns">
+			Chris got:
+			<ul>
+				<li><a href="#" class="player_link">Peyton Manning</a></li>
+				<li><a href="#" class="player_link">LeSean McCoy</a></li>
+			</ul>
+		</div>
+		<div class="trade_opponent span4 columns offset1">
+			Chris got:
+			<ul>
+				<li><a href="#" class="player_link">Brian Bosworth</a></li>
+				<li><a href="#" class="player_link">Clinton Portis</a></li>
+			</ul>
+		</div>
+		<div class="clear"></div>
 	</div>
 	
-	<div class="add_drop">
-	
+	<div class="add_drop feed_item">
+		<img src="{{ STATIC_URL }}img/profile.png" class="profile_img" />
+		<h5><a href="#">Chris Brakebill</a></h5>
+		<p>Has made some roster changes.</p>
+		<img src="{{ STATIC_URL }}img/plus.png" width="15px" height="15px" />
+		<div class="clear"></div>
 	</div>
-	
-	
-	<div id="modal_side">
-		<input type="submit" name="hide_modal" value=">" />
-		<h3>QB - Peyton Manning</h3>
-		<h5>Indianapolis Colts</h5>
-		
-		<table>
-			<thead>
-				<tr><th>Year</th><th>Points</th></tr>
-			</thead>
-			<tbody>
-				<tr><td>2010</td><td>455.6</td></tr>
-				<tr><td>2009</td><td>420.8</td></tr>
-				<tr><td>2008</td><td>512.5</td></tr>
-				<tr><td>2007</td><td>443.7</td></tr>
-			</tbody>
-		</table>
-		
-		<h5>Teammates</h5>
-		<ul class="teammates">
-			
-			<li>
-				<span class="teammate_name">Reggie Wayne</span>
-				<div class="teammate_button">
-					<input type="submit" name="draft" value="Draft" />
-				</div>
-				<table></table>
-			</li>
-			
-			<li>
-				<span class="teammate_name">Dallas Clark</span>
-				<div class="teammate_button">
-					<img src="{{ STATIC_URL }}img/profile.png" class="profile_img" /> 
-					<input type="submit" name="draft" value="Drafted" class="inactive" />
-				</div>
-				<table></table>
-			</li>
-			
-			<li>
-				<span class="teammate_name">Pierre Garcon</span>
-				<div class="teammate_button">
-					<input type="submit" name="draft" value="Draft" />
-				</div>
-				<table></table>
-			</li>
-		
-		</ul>
-	</div>
+</div>
 {% endblock body %}
-
-{% block extra_body %}
-<script type="text/javascript">
-</script>
-{% endblock %}

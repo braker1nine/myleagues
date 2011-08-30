@@ -21,6 +21,10 @@
 
 /* Main Body */
 
+#body {
+	width: 758px;
+}
+
 /* Post Update */
 .post_update textarea {
 	resize:none;
@@ -34,6 +38,25 @@
 	float: right;
 }
 
-.post_update {
-	border-bottom: 1px solid #CCCCCC;;
+.feed_item {
+	border-bottom: 1px solid #CCCCCC;
+}
+
+/* Status Update */
+.feed_item .profile_img {
+	width: 40px;
+	padding: 8px;
+	float: left;
+	
+	border-radius:8px;
+	-moz-border-radius: 8px;
+}
+
+/* Trade Item */
+.trade {
+	min-height: 60px;
+}
+
+.trade .profile_img.other {
+	float: right;
 }
