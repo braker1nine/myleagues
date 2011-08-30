@@ -1,261 +1,156 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" dir="{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}" xml:lang="{{ LANGUAGE_CODE }}" lang="{{ LANGUAGE_CODE }}">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <title>{% block head_title_base %}{% block head_title %}Draft{% endblock %}{% endblock %}</title>
-		<style type="text/css">
-		
-			body {
-				background-image: url('/media/img/Grass_Background.png');
-				background-repeat: repeat-x;
-			}
-		
-			#topnav {
-				position: fixed;
-				top: 0;
-				left: 0;
-				right: 0;
-				margin-bottom: 50px;
-				vertical-align: middle;	
-				padding-left: 10px;
-				padding-top: 5px;
-				padding-bottom: 5px;
-				
-				background: #45484d; /* Old browsers */
-				background: -moz-linear-gradient(top, #45484d 0%, #2b2b2b 100%); /* FF3.6+ */
-				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#45484d), color-stop(100%,#2b2b2b)); /* Chrome,Safari4+ */
-				background: -webkit-linear-gradient(top, #45484d 0%,#2b2b2b 100%); /* Chrome10+,Safari5.1+ */
-				background: -o-linear-gradient(top, #45484d 0%,#2b2b2b 100%); /* Opera11.10+ */
-				background: -ms-linear-gradient(top, #45484d 0%,#2b2b2b 100%); /* IE10+ */
-				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#2b2b2b',GradientType=0 ); /* IE6-9 */
-				background: linear-gradient(top, #45484d 0%,#2b2b2b 100%); /* W3C */
-				
-				-moz-box-shadow: 0px 2px 8px -1px #000;
-				-webkit-box-shadow: 0px 2px 10px -50px #000;
-				box-shadow: 0px 2px 5px -2px #000;
-				z-index: 2;
-				font-family: Arial, sans-serif;
-			}
-			
-			
-			
-			#topnav h1, h2 {
-				display: inline;
-				color: white;
-				text-shadow: -1px -1px black, 1px 1px #6B6B6B;
-			}
-			
-			
-			#wrapper {
-				background-image: url('Sidebar.png'); 
-				background-repeat: repeat-y;
-				background-position: left top;
-				padding-top: 10px;
-				margin-top: 40px;
-				margin-left: -8px;
-				z-index: 1;
-			}
-			
-			#sidebar {
-				float: left;
-				width: 180px;
-				margin-left: 5px;
-				
-				-moz-border-radius: 4px;
-				border-radius: 4px;
-			}
-			
-			#notable {
-				position: fixed;
-				top: 50px;
-				right: 5px;
-				width: 200px;
-				
-				background: #383838; /* Old browsers */
-				background: -moz-linear-gradient(top, #383838 0%, #1e1f21 100%); /* FF3.6+ */
-				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#383838), color-stop(100%,#1e1f21)); /* Chrome,Safari4+ */
-				background: -webkit-linear-gradient(top, #383838 0%,#1e1f21 100%); /* Chrome10+,Safari5.1+ */
-				background: -o-linear-gradient(top, #383838 0%,#1e1f21 100%); /* Opera11.10+ */
-				background: -ms-linear-gradient(top, #383838 0%,#1e1f21 100%); /* IE10+ */
-				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#383838', endColorstr='#1e1f21',GradientType=0 ); /* IE6-9 */
-				background: linear-gradient(top, #383838 0%,#1e1f21 100%); /* W3C */
-				
-				-moz-box-shadow: 2px 2px 8px -1px #000;
-				-webkit-box-shadow: 1px 1px 10px #000;
-				box-shadow: 1px 1px 5px -1px #000;
-				
-				margin: 10px 10px 10px 10px;
-				-moz-border-radius: 4px;
-				border-radius: 4px;
-			}
-			
-			#notable h3 {
-				color: white;
-				margin-left: 5px;
-				font-size: 0.9em;
-				text-shadow: -1px -1px black;
-			}
-			
-			#notable p {
-				color: white;
-				margin-left: 5px;
-				margin-right: 5px;
-				font-size: 0.9em;
-				text-shadow: -1px -1px ;
-			}
-			
-			#available ul {
-				margin-left: -20px;
-			}
-			
-			#available li {
-				display: inline;
-			}
-			
-			#available li a {
-				text-decoration: none;
-				color: white;
-			}
-			
-			
-			#main_content {
-				margin-left: 220px;
-				margin-right: 220px;
-				height: 100%;
-				text-align: center;
-			}
-			
-			#main_content table {
-				margin: auto;
-				width: 80%;
-				max-width: 100%;
-				margin-top: 10px;
-				background-color: white;
-				border-radius: 8px;
-				-moz-border-radius: 8px;
-				-moz-box-shadow: 2px 2px 8px -1px #000;
-				-webkit-box-shadow: 1px 1px 10px #000;
-				box-shadow: 1px 1px 5px -1px #000;
-			}
-			
-			#recent_picks ul {
-				display: inline;
-				list-style: none;
-			}
-			
-			#footer {
-				clear: both;
-				background-color: black;
-				
-			}
-			
-			#notable h3 {
-				background-color: white;
-				-moz-box-shadow:inset 2px 2px 8px -1px #000;
-				-webkit-box-shadow:inset 2px 2px 10px -50px #000;
-				box-shadow:inset 0px 0px 5px -1px #000;
-				margin-top: 2px;
-				margin-left: 2px;
-				margin-right: 2px;
-				padding-left: 6px;
-				color: black;
-				text-shadow: none;
-			}
-			
-			#transactions h3 {
-				-moz-border-radius-topleft: 3px;
-				-moz-border-radius-topright: 3px;
-				border-top-left-radius: 3px;
-				border-top-right-radius: 3px;
-			}
-			
+{% extends "site_base.html" %}
 
-			
-		</style>
-		
-		<script src="../../media/js/jquery.js" type="text/javascript"></script>
-		<script src="../../media/js/jquery-ui.js" type="text/javascript"></script>
-		<script type="text/javascript">
-		
-		</script>
-    </head>
+{% block extra_head %}
+<link rel="stylesheet" href="{{ STATIC_URL }}css/league.css" type="text/css" />
+<style type="text/css">
+.subnav ul li.active {
+	background-image: url('{{STATIC_URL}}img/down_arrow.png');
+	background-position: 50% 0%;
+	background-repeat: no-repeat;
+}
+</style>
+{% endblock %}
 
-	<body>
-		<div id="topnav">
+{% block subnav %}
+	<!--<ul class="league_nav">
+		<li><a href="#">League Name</a></li>
+		<li><span>></span></li>
+		<li><span>Team Name</span></li>
+	</ul>-->
+	
+	<ul class="nav_items">
+		<li><a href="#">League Settings</a></li>
+		<li><a href="#">Players</a></li>
+		<li><a href="#">Messages</a></li>
+		<li class="active"><a href="#">Overview</a></li>
+	</ul>
+	<div class="clear"></div>
+{% endblock %}
+
+
+{% block left_sidebar %}
+<div class="span3 columns" id="left_sidebar">
+	<img src="{{ STATIC_URL }}img/profile.png" class="profile_img" />
+	<h4>Chris</h4>
+	<p>This is just some test content.</p>
+	<h5>Team</h5>
+	<p>This is who is on the team</p>
+</div>
+{% endblock left_sidebar %}
+
+{% block right_sidebar %}
+<div class="span3 columns" id="right_sidebar">
+	<h5>Transactions</h5>
+	<div class="transaction">
+	<a href="#">Munchie Legeaux</a> added <a href="#" class="player_link">Michael Vick</a> and dropped <a href="#" class="player_link">A.J. Feeley</a>
+	</div>
+	<h5>Messages</h5>
+</div>
+{% endblock right_sidebar %}
+
+
+{% block body %}
+<div id="body" class="span10 columns">
+
+	<table>
+		<thead>
+			<tr>
+				<th>Team</th>
+				<th>Owner</th>
+				<th>Points</th> <!-- or record -->
+				<th>Waiver</th>
+				<th>Moves</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><a href="/league/thisleague/team/the_landsharks/">The Landsharks</a></td>
+				<td class="owner"><img src="{{ STATIC_URL }}img/profile.png" class="profile_img" />Stuart Deaderick</td>
+				<td>0.00</td>
+				<td>4</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>Colossus of Clout</td>
+				<td class="owner"><img src="{{ STATIC_URL }}img/profile.png" class="profile_img" />Mike Gilmore</td>
+				<td>0.00</td>
+				<td>5</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>Terry Carmichael</td>
+				<td class="owner"><img src="{{ STATIC_URL }}img/profile.png" class="profile_img" />Eric Sollenberger</td>
+				<td>0.00</td>
+				<td>3</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>Munchie Legeaux</td>
+				<td class="owner"><img src="{{ STATIC_URL }}img/profile.png" class="profile_img" />Jay Slagle</td>
+				<td>0.00</td>
+				<td>2</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>El Diablo</td>
+				<td class="owner"><img src="{{ STATIC_URL }}img/profile.png" class="profile_img" />Matt Davis</td>
+				<td>0.00</td>
+				<td>1</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>Ginger Genocide '11</td>
+				<td class="owner"><img src="{{ STATIC_URL }}img/profile.png" class="profile_img" />Jameson Bundy</td>
+				<td>0.00</td>
+				<td>6</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>Hail to the V</td>
+				<td class="owner"><img src="{{ STATIC_URL }}img/profile.png" class="profile_img" />Bret Vukoder</td>
+				<td>0.00</td>
+				<td>7</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>Bieberhole69</td>
+				<td class="owner"><img src="{{ STATIC_URL }}img/profile.png" class="profile_img" />Danny Peterson</td>
+				<td>0.00</td>
+				<td>11</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>Sexy Dancers</td>
+				<td class="owner"><img src="{{ STATIC_URL }}img/profile.png" class="profile_img" />Dan Wells</td>
+				<td>0.00</td>
+				<td>10</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>Nightcrawlers</td>
+				<td class="owner"><img src="{{ STATIC_URL }}img/profile.png" class="profile_img" />Henry Shiflett</td>
+				<td>0.00</td>
+				<td>9</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>Smash-Bang Fusion</td>
+				<td class="owner"><img src="{{ STATIC_URL }}img/profile.png" class="profile_img" />Mark Hoffman</td>
+				<td>0.00</td>
+				<td>8</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>The Vinegar Strokes</td>
+				<td class="owner"><img src="{{ STATIC_URL }}img/profile.png" class="profile_img" />Chris Brakebill</td>
+				<td>0.00</td>
+				<td>12</td>
+				<td>1</td>
+			</tr>
 			
-				<h1>MYLEAGUES</h1>
-				<h2> / League Name</h2>
-			
-			<!--<div id="site_settings">
-				<input type="text" name="site_search" placeholder="Search…" />
-			</div>-->
-		</div>
-		
-		<div id="wrapper">
-			<div id="sidebar">
-				<h4>Chris</h4>
-				<p>This is just some test content.</p>
-				<h5>Team</h5>
-				<p>This is who is on the team</p>
-			</div>
-		
-			<div id="notable">
-				<div id="transactions">
-					<h3>Transactions</h3>
-					<div class="transaction">
-						<p>Team A picked up Jim</p>
-					</div>
-					<div class="transaction">
-						<p>Team B dropped Jim</p>
-					</div>
-					<div class="transaction">
-						<p>Team C and Team D made a trade</p>
-					</div>
-				</div>
-				<div id="messages">
-					<h3>Messages</h3>
-				</div>
-			</div>
-			
-			<div id="main_content">
-				<div id="notifications"></div>
-				<div id="standings"></div>
-				<table>
-					<thead>
-						<tr><th>Team</th><th>Owner</th><th>Record</th><th>Last Week</th></tr>
-					</thead>
-					<tbody>
-						<tr><td>Team Name</td><td>Owner Name</td><td>8-0</td><td>1</td></tr>
-						<tr><td>Team Name</td><td>Owner Name</td><td>8-0</td><td>1</td></tr>
-						<tr><td>Team Name</td><td>Owner Name</td><td>8-0</td><td>1</td></tr>
-						<tr><td>Team Name</td><td>Owner Name</td><td>8-0</td><td>1</td></tr>
-						<tr><td>Team Name</td><td>Owner Name</td><td>8-0</td><td>1</td></tr>
-						<tr><td>Team Name</td><td>Owner Name</td><td>8-0</td><td>1</td></tr>
-						<tr><td>Team Name</td><td>Owner Name</td><td>8-0</td><td>1</td></tr>
-						<tr><td>Team Name</td><td>Owner Name</td><td>8-0</td><td>1</td></tr>
-						<tr><td>Team Name</td><td>Owner Name</td><td>8-0</td><td>1</td></tr>
-						<tr><td>Team Name</td><td>Owner Name</td><td>8-0</td><td>1</td></tr>
-						<tr><td>Team Name</td><td>Owner Name</td><td>8-0</td><td>1</td></tr>
-					</tbody>
-				</table>
-				<p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. </p>
-				<p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. </p>
-				<p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. </p>
-				<p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. </p>
-				<p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. </p>
-				<p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. </p>
-				<p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. </p>
-				<p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. </p>
-				<p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. </p>
-				<p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. </p>
-				<p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. </p>
-				<p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. </p>
-				<p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. </p>
-				<p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. </p>
-				
-			</div>
-		</div>
-		
-		<div id="footer">This is a test</div>
-	</body>
-</html>
+		</tbody>
+	</table>
+
+	
+</div>
+{% endblock %}
