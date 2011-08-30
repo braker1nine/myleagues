@@ -45,6 +45,7 @@
         {% endif %}-->
        
        <div class="topbar">{% block top_navbar %}{% endblock %}</div>
+       <div class="subnav">{% block subnav %}{% endblock %}</div>
        <div class="container">
 	       <div class="row" id="main"> 
 		   
@@ -53,7 +54,6 @@
 		    
 		    
 	        {% block body_outer %}
-		        <div class="span10 columns" id="body">
 		            <!--{% if messages %}
 		                <ul id="messages">
 		                    {% for message in messages %}
@@ -68,7 +68,6 @@
 		            {% block body %}
 		            {% endblock %}
 		            
-		        </div>
 	        {% endblock %}
 	        
 	        {% block right_sidebar %}
