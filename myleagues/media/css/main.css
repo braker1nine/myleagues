@@ -89,6 +89,21 @@ div.topbar {
 	
 }
 
+/* Left Sidebar */
+#left_sidebar .profile_img {
+	width: 150px;
+	height: 150px;
+	margin-left: 10px;
+	
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	
+	-moz-box-shadow: 0px 0px 4px -1px #000;
+	-webkit-box-shadow: 0px 0px 4px -1px #000;
+	box-shadow: 0px 0px 4px -1px #000;
+	
+}
+
 #right_sidebar {
 	//padding: 5px;
 	height: 100%;
@@ -167,15 +182,6 @@ div.topbar {
 	font-size: 0.8em;
 }
 
-#modal_side > input {
-	width: 20px;
-	height: 20px;
-	
-	padding: 0;
-	-moz-border-radius: 10px;
-	border-radius: 10px;
-	border: 1px solid #AAAAAA;
-}
 
 #modal_side table {
 	border-collapse: collapse;
