@@ -1,0 +1,13 @@
+#body {
+	width: 938px;
+}
+
+table.positions {
+	width: 90%;
+	margin: auto;
+	text-align: center;
+}
+
+table.positions tr :first-child {
+	width: 10%;
+}

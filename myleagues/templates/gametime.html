@@ -1,0 +1,175 @@
+{% extends "site_base.html" %}
+
+{% block head_title_base %}{% block head_title %}Gametime Decision{% endblock %}{% endblock %}</title>
+
+{% block extra_head %}
+<link rel="stylesheet" href="{{ STATIC_URL }}css/gametime.css" type="text/css" />
+{% endblock extra_head %}
+
+{% block subnav %}	
+	<ul class="nav_items">
+		<li><a href="#">Players</a></li>
+		<li><a href="#">History</a></li>
+		<li class="active"><a href="#">Gametime Decision</a></li>
+	</ul>
+	<div class="clear"></div>
+{% endblock %}
+		
+
+{% block body %}
+<div class="span16 columns" id="body">
+	<button class="btn primary large" style="float:right;margin-right:10px;">Ask for help</button>
+	
+	<div class="decision_wrapper">
+		<table class="positions">
+			<thead>
+				<tr>
+					<th>Position</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>QB</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>WR</td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<table class="zebra-striped player_choices">
+			<thead>
+				<tr>
+					<th rowspan="2">Player</th>
+					<th rowspan="2">Position</th>
+					<th rowspan="2">Team</th>
+					<th rowspan="2">Opponent</th>
+					<th>Trends</th>
+					<th colspan="4">Passing</th>
+					<th colspan="2">Rushing</th>
+					<th colspan="3">Receiving</th>
+					<th colspan="2">Return</th>
+					<th>Misc</th>
+					<th rowspan="2">Points</th>
+				</tr>
+				<tr>
+					<th>% start</th>
+					<th>Yds</th>
+					<th>TD</th>
+					<th>Int</th>
+					<th>Sack</th>
+					<th>Yds</th>
+					<th>TD</th>
+					<th>Rec</th>
+					<th>Yds</th>
+					<th>TD</th>
+					<th>Yds</th>
+					<th>TD</th>
+					<th>2 Pt</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="QB">
+					<td><a href="#"class="player_link">Peyton Manning</a></td>
+					<td><a href="#">QB</a></td>
+					<td><a href="#">IND</a></td>
+					<td><a href="#">NO</a></td>
+					<td><a href="#">100%</a></td>
+					<td><a href="#">300</a></td>
+					<td><a href="#">2</a></td>
+					<td><a href="#">1</a></td>
+					<td><a href="#">1</a></td>
+					<td><a href="#">12</a></td>
+					<td><a href="#">1</a></td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>1</td>
+					<td>25.2</td>
+				</tr>
+				<tr class="QB">
+					<td><a href="#"class="player_link">Peyton Manning</a></td>
+					<td><a href="#">QB</a></td>
+					<td><a href="#">IND</a></td>
+					<td><a href="#">NO</a></td>
+					<td><a href="#">100%</a></td>
+					<td><a href="#">300</a></td>
+					<td><a href="#">2</a></td>
+					<td><a href="#">1</a></td>
+					<td><a href="#">1</a></td>
+					<td><a href="#">12</a></td>
+					<td><a href="#">1</a></td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>1</td>
+					<td>25.2</td>
+				</tr>
+				<tr class="WR">
+					<td><a href="#"class="player_link">Peyton Manning</a></td>
+					<td><a href="#">QB</a></td>
+					<td><a href="#">IND</a></td>
+					<td><a href="#">NO</a></td>
+					<td><a href="#">100%</a></td>
+					<td><a href="#">300</a></td>
+					<td><a href="#">2</a></td>
+					<td><a href="#">1</a></td>
+					<td><a href="#">1</a></td>
+					<td><a href="#">12</a></td>
+					<td><a href="#">1</a></td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>1</td>
+					<td>25.2</td>
+				</tr>
+				<tr class="WR">
+					<td><a href="#"class="player_link">Peyton Manning</a></td>
+					<td><a href="#">QB</a></td>
+					<td><a href="#">IND</a></td>
+					<td><a href="#">NO</a></td>
+					<td><a href="#">100%</a></td>
+					<td><a href="#">300</a></td>
+					<td><a href="#">2</a></td>
+					<td><a href="#">1</a></td>
+					<td><a href="#">1</a></td>
+					<td><a href="#">12</a></td>
+					<td><a href="#">1</a></td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>1</td>
+					<td>25.2</td>
+				</tr>
+			</tbody>
+		</table>
+		
+	</div>
+</div>
+{% endblock body %}
+
+{% block extra_body %}
+<script type="text/javascript">
+$(function () {
+
+$(".player_choices tbody tr").draggable
+
+helper:function(event){
+return $('<div class="drag_player"><table></table></div>').find('table').append($(event.target).clone()).end.appendTo('body');
+});
+</script>
+{% endblock %}
+
+
+
