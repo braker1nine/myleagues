@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="{{ STATIC_URL }}pinax/css/jquery.autocomplete.css" />
     <link rel="stylesheet" href="{{ STATIC_URL }}bookmarks/css/bookmarks.css" />
     <link href='http://fonts.googleapis.com/css?family=Cabin+Sketch:700' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    .subnav ul li.active {
+    	background-image: url('{{STATIC_URL}}img/down_arrow.png');
+    }
+    </style>
     {% block extra_head %}{% endblock %}
 {% endblock %}
 
@@ -18,10 +23,9 @@
 {% block top_navbar %}
 	<a class="logo" href="/">M<span class="goalpost">Y</span>LEAGUES</a>
 	<ul>
-		<li><a href="#">Home</a></li>
-		<li><a href="#">Friends</a></li>
-		<li><a href="#">Profile</a></li>
-		<li class="active"><a href="#">Draft</a></li>
+		<li><a href="/">Home</a></li>
+		<li><a href="/friends">Friends</a></li>
+		<li><a href="/user/thisisme">Profile</a></li>
 	</ul>
 	<form action="">
 	     <input type="text" placeholder="Search" />
@@ -59,7 +63,65 @@
 {% endblock %}
 
 {% block extra_body_base %}
+	<div id="modal_side">
+		<input type="submit" name="hide_modal" value="Close" class="btn primary" />
+		<h3>QB - Peyton Manning</h3>
+		<h5>Indianapolis Colts</h5>
+		
+		<table>
+			<thead>
+				<tr><th>Year</th><th>Points</th></tr>
+			</thead>
+			<tbody>
+				<tr><td>2010</td><td>455.6</td></tr>
+				<tr><td>2009</td><td>420.8</td></tr>
+				<tr><td>2008</td><td>512.5</td></tr>
+				<tr><td>2007</td><td>443.7</td></tr>
+			</tbody>
+		</table>
+		
+		<h5>Teammates</h5>
+		<ul class="teammates">
+			
+			<li>
+				<span class="teammate_name">Reggie Wayne</span>
+				<div class="teammate_button">
+					<input type="submit" name="draft" value="Draft" />
+				</div>
+				<table></table>
+			</li>
+			
+			<li>
+				<span class="teammate_name">Dallas Clark</span>
+				<div class="teammate_button">
+					<img src="{{ STATIC_URL }}img/profile.png" class="profile_img" /> 
+					<input type="submit" name="draft" value="Drafted" class="inactive" />
+				</div>
+				<table></table>
+			</li>
+			
+			<li>
+				<span class="teammate_name">Pierre Garcon</span>
+				<div class="teammate_button">
+					<input type="submit" name="draft" value="Draft" />
+				</div>
+				<table></table>
+			</li>
+		
+		</ul>
+	</div>
     {% ga %}
     <script type="text/javascript" src="{{ STATIC_URL }}pinax/js/topics.js"></script>
+    <script type="text/javascript">
+    $(function () {
+    	$('.player_link').click(function () {
+    		$('#modal_side').show("slide", {direction: "right", mode: "show"}, 500);
+    	});
+    	
+    	$('#modal_side > input').click(function() {
+    		$('#modal_side').hide("slide", {direction: "right", mode: "show"}, 500);
+    	});
+    });
+    </script>
     {% block extra_body %}{% endblock %}
 {% endblock %}
