@@ -1,10 +1,9 @@
 from django.contrib import admin
-from league.models import Owner, Player, Team, Scoring, League, Transaction, trade, team_trade, add, drop, add_drop, Roster
+from league.models import Owner, Player, Team, League, Transaction, trade, team_trade, add, drop, add_drop, Roster
 
 admin.site.register(Owner)
 admin.site.register(Player)
 admin.site.register(Team)
-admin.site.register(Scoring)
 admin.site.register(League)
 admin.site.register(Transaction)
 admin.site.register(trade)
