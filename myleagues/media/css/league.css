@@ -14,16 +14,65 @@
 }
 
 /* Right Sidebar */
+#right_sidebar {
+	border-left: 1px solid #CCC;
+	width: 459px;
+}
+
 #right_sidebar div {
 	font-size: 0.8em;
 }
 
-/* Body */
-
-#body {
-	width: 578px;
+#right_sidebar table {
+	font-size: 0.9em;
+	border-bottom: 1px solid #CCC;
 }
 
+/* Body */
+
+#body > * {
+	margin-left: 10px;
+}
+
+#body .profile_img {
+	width: 25px;
+	height: 25px;
+	
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	
+	-moz-box-shadow: 0px 0px 3px -1px #000;
+	-webkit-box-shadow: 0px 0px 3px -1px #000;
+	box-shadow: 0px 0px 3px -1px #000;
+	margin-bottom: -7px;
+}
+
+.feed_item {
+	border-top: 1px solid #EBEBEB;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+ul.reactions {
+	list-style: none;
+}
+
+ul.reactions li {
+	display: inline-block;
+}
+
+ul.reactions li img {
+	height: 20px;
+}
+
+#body div.feed_item .profile_img {
+	float: left;
+	margin: 3px;
+}
+
+#body div.feed_item img.other.profile_img {
+	float: right;
+}
 
 td.owner .profile_img {
 	width: 25px;
