@@ -29,29 +29,18 @@
 
 
 {% block left_sidebar %}
-<div class="span3 columns" id="left_sidebar">
+<!--<div class="span3 columns" id="left_sidebar">
 	<img src="{{ STATIC_URL }}img/profile.png" class="profile_img" />
 	<h4>Chris</h4>
 	<p>This is just some test content.</p>
 	<h5>Team</h5>
 	<p>This is who is on the team</p>
-</div>
+</div>-->
 {% endblock left_sidebar %}
 
 {% block right_sidebar %}
-<div class="span3 columns" id="right_sidebar">
-	<h5>Transactions</h5>
-	<div class="transaction">
-	<a href="#">Munchie Legeaux</a> added <a href="#" class="player_link">Michael Vick</a> and dropped <a href="#" class="player_link">A.J. Feeley</a>
-	</div>
-	<h5>Messages</h5>
-</div>
-{% endblock right_sidebar %}
-
-
-{% block body %}
-<div id="body" class="span10 columns">
-
+<div class="span8" id="right_sidebar">
+	<h3>Standings</h3>
 	<table>
 		<thead>
 			<tr>
@@ -64,7 +53,7 @@
 		</thead>
 		<tbody>
 			<tr>
-				<td><a href="/league/thisleague/team/the_landsharks/">The Landsharks</a></td>
+				<td><a href="/beta/league/thisleague/team/the_landsharks/">The Landsharks</a></td>
 				<td class="owner"><img src="{{ STATIC_URL }}img/profile.png" class="profile_img" />Stuart Deaderick</td>
 				<td>0.00</td>
 				<td>4</td>
@@ -150,7 +139,137 @@
 			
 		</tbody>
 	</table>
+</div>
+{% endblock right_sidebar %}
 
+
+{% block body %}
+<div id="body" class="span8">
+	<h3>Activity</h3>
+	<div class="status_update feed_item">
+		<img src="{{ STATIC_URL }}img/profile.png" class="profile_img" />
+		<h5><a href="#">Chris Brakebill</a></h5>
+		<p>This is the status text and I'm really a big fan of <a href="#" class="player_link">Michael Vick</a></p>
+		<ul class="reactions">
+			<li><img src="{{ STATIC_URL }}img/Smiley.png" alt="smile" /></li>
+			<li><img src="{{ STATIC_URL }}img/Thumbs_aloft.png" alt="Thumbs Aloft" /></li>
+			<li><img src="{{ STATIC_URL }}img/shocked.png" alt="Shocked" /></li>
+			<li><img src="{{ STATIC_URL }}img/sick.png" alt="Sick" /></li>
+		</ul>
+		<div class="comments">
+		
+		</div>
+		<textarea></textarea>
+	</div>
+	
+	<div class="status_update feed_item">
+		<img src="{{ STATIC_URL }}img/jameson.jpg" class="profile_img" />
+		<h5><a href="#">Jim Bob Cooter</a></h5>
+		<p>Your mother was a hamster and your father smelled of elderberries</p>
+		<ul>
+			<li>Smile</li>
+			<li>Laugh</li>
+			<li>Angry</li>
+			<li>Amazed</li>
+		</ul>
+		<div class="comments">
+		
+		</div>
+		<textarea></textarea>
+	</div>
+	
+	<div class="trade feed_item">
+		<img src="{{ STATIC_URL }}img/profile.png" class="profile_img" />
+		<img src="{{ STATIC_URL }}img/profile.png" class="profile_img other" />
+		<h5><a href="#">Chris Brakebill</a></h5>
+		<p>made a trade with <a href="#">Chris Brakebill</a> in the league <a href="#">Dooley Dozen</a>.</p>
+		<div class="trade_self span4 columns">
+			Chris got:
+			<ul>
+				<li><a href="#" class="player_link">Peyton Manning</a></li>
+				<li><a href="#" class="player_link">LeSean McCoy</a></li>
+			</ul>
+		</div>
+		<div class="trade_opponent span4 columns offset1">
+			Chris got:
+			<ul>
+				<li><a href="#" class="player_link">Brian Bosworth</a></li>
+				<li><a href="#" class="player_link">Clinton Portis</a></li>
+			</ul>
+		</div>
+		<div class="clear"></div>
+	</div>
+	
+	<div class="status_update feed_item">
+		<img src="{{ STATIC_URL }}img/profile.png" class="profile_img" />
+		<h5><a href="#">Chris Brakebill</a></h5>
+		<p>This is the status text and I'm really a big fan of <a href="#" class="player_link">Michael Vick</a></p>
+	</div>
+	
+	<div class="status_update feed_item">
+		<img src="{{ STATIC_URL }}img/jameson.jpg" class="profile_img" />
+		<h5><a href="#">Jim Bob Cooter</a></h5>
+		<p>Your mother was a hamster and your father smelled of elderberries</p>
+	</div>
+
+	<div class="status_update feed_item">
+		<img src="{{ STATIC_URL }}img/profile.png" class="profile_img" />
+		<h5><a href="#">Chris Brakebill</a></h5>
+		<p>This is the status text and I'm really a big fan of <a href="#" class="player_link">Michael Vick</a></p>
+	</div>
+	
+	<div class="status_update feed_item">
+		<img src="{{ STATIC_URL }}img/jameson.jpg" class="profile_img" />
+		<h5><a href="#">Jim Bob Cooter</a></h5>
+		<p>Your mother was a hamster and your father smelled of elderberries</p>
+		<ul>
+			<li>Comment</li>
+			<li>Like</li>
+			<li>Dislike</li>
+		</ul>
+		<ul>
+			<li>2 Likes</li>
+			<li>1 Dislike</li>
+		</ul>
+		<div class="comments">
+		
+		</div>
+	</div>
+	
+	<div class="trade feed_item">
+		<img src="{{ STATIC_URL }}img/profile.png" class="profile_img" />
+		<img src="{{ STATIC_URL }}img/profile.png" class="profile_img other" />
+		<h5><a href="#">Chris Brakebill</a></h5>
+		<p>made a trade with <a href="#">Chris Brakebill</a> in the league <a href="#">Dooley Dozen</a>.</p>
+		<div class="trade_self span4 columns">
+			Chris got:
+			<ul>
+				<li><a href="#" class="player_link">Peyton Manning</a></li>
+				<li><a href="#" class="player_link">LeSean McCoy</a></li>
+			</ul>
+		</div>
+		<div class="trade_opponent span4 columns offset1">
+			Chris got:
+			<ul>
+				<li><a href="#" class="player_link">Brian Bosworth</a></li>
+				<li><a href="#" class="player_link">Clinton Portis</a></li>
+			</ul>
+		</div>
+		<div class="clear"></div>
+	</div>
+	
+	<div class="status_update feed_item">
+		<img src="{{ STATIC_URL }}img/profile.png" class="profile_img" />
+		<h5><a href="#">Chris Brakebill</a></h5>
+		<p>This is the status text and I'm really a big fan of <a href="#" class="player_link">Michael Vick</a></p>
+	</div>
+	
+	<div class="status_update feed_item">
+		<img src="{{ STATIC_URL }}img/jameson.jpg" class="profile_img" />
+		<h5><a href="#">Jim Bob Cooter</a></h5>
+		<p>Your mother was a hamster and your father smelled of elderberries</p>
+	</div>
+		
 	
 </div>
 {% endblock %}

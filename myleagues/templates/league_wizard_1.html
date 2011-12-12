@@ -1,0 +1,43 @@
+{% extends "site_base.html" %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{{STATIC_URL}}css/new_user.css" type="text/css" />
+{% endblock %}
+
+
+{% block left_sidebar %}
+<!--<div class="span3 columns" id="left_sidebar">
+	<img src="{{ STATIC_URL }}img/profile.png" class="profile_img" />
+	<h4>Chris</h4>
+	<p>This is just some test content.</p>
+	<h5>Team</h5>
+	<p>This is who is on the team</p>
+</div>-->
+{% endblock left_sidebar %}
+
+
+{% block body %}
+<div id="body" class="span16 columns" style="padding-top: 50px;">
+	<h2>Create a new league</h2>
+	{% if form.errors %}
+		<div class="alert-message error">
+			<p>Please correct the error{{ form.errors|pluralize }} below.</p>
+		</div>
+	{% endif %}
+	
+	<form method="post" action="">{% csrf_token %}
+		{% for field in form %}
+			<div class="fieldWrapper clearfix{% if field.errors %} error{% endif %}">
+				{{field.label_tag}} {{field}}
+				{{field.help_text}}
+				{{field.errors}}
+			</div>
+			</br>
+		{% endfor %}
+		<input type="hidden" name="{{ step_field }}" value="{{ step0 }}" />
+		{{ previous_fields|safe }}
+		
+		<input type="submit" name="next" value="Next" class="btn large" />
+	</form>
+</div>
+{% endblock %}
