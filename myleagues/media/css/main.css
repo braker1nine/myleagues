@@ -2,23 +2,36 @@
 @import url(http://fonts.googleapis.com/css?family=Cabin+Sketch);
 
 
-*:link, *:visited, *:hover, *:active, *:focus {
-	-webkit-transition: color .1s linear, background-color .1s linear, border-color .1s linear;
-	transition: color .1s linear, background-color .1s linear, border-color .1s linear;
+
+html, body {
+	height: 100%;
+}
+
+#container {
+	min-height: 100%;
+	position: relative;
+	margin-bottom: -60px;
+}
+
+#container > div.container {
+	border-left: 1px solid #CCCCCC;
+	border-right: 1px solid #CCCCCC;
 }
 
 /* Header CSS */
-.topbar {
-	
-}
 
-div.topbar > a.logo {
-	margin-left: 0 !important;
+div.topbar a.logo {
+	margin-left: 5px;
+	margin-right: 5px;
 	font-family: 'Cabin Sketch', sans-serif;
+	text-decoration: none;
+	color: white;
+	
 }
 
 div.topbar {
 	min-width: 940px;
+	z-index: 20001 !important;
 }
 
 .goalpost {
@@ -29,6 +42,7 @@ div.topbar {
 
 /* Subnav */
 .subnav {
+	margin-top: 40px;
 	border-bottom: 1px solid #CCCCCC;
 	background: rgb(255,255,255); /* Old browsers */
 	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%); /* FF3.6+ */
@@ -44,7 +58,6 @@ div.topbar {
 	width: 940px;
 	list-style: none;
 	margin: auto;
-	margin-top: 38px;
 }
 
 .subnav ul.nav_items li {
@@ -78,11 +91,6 @@ div.topbar {
   background-color: rgba(0, 0, 0, 0.15);
 }
 
-#body {
-	border-left: 1px solid #CCCCCC;
-	border-right: 1px solid #CCCCCC;
-}
-
 #left_sidebar {
 	height: 100%;
 	//padding: 5px;
@@ -109,31 +117,9 @@ div.topbar {
 	height: 100%;
 }
 
-/*.container {
-	padding-top: 30px;
-}*/
-
 .columns {
 	padding-top: 15px;
 }
-
-/*#right_sidebar {
-  float:right;
-  width:150px;  
-  padding-top: 20px;
-  padding-left: 10px;
-  padding-right: 10px; 
-}*/
-
-/*#footer {
-	background-color: black;
-	height: 40px;
-	width: auto;
-	z-index: 2;
-	-moz-box-shadow: 0px 2px 5px -2px #000;
-	-webkit-box-shadow: 0px 2px 5px -2px #000;
-	box-shadow: 0px 2px 5px -2px #000;
-}*/
 
 
 /* Sidebar CSS */
@@ -142,39 +128,43 @@ div.topbar {
 }
 
 /* Modal Sideview CSS */
-#modal_side {
+.modal_side {
 	display: none;	
-	position: fixed;
-	padding-left: 10px;
-	padding-right: 10px;
-	padding-top: 10px;
-	width: 200px;
+	position: absolute;
+	padding: 0;
+	width: 300px;
 	height: 100%;
 	top: 40px;
 	right: 0;
 	bottom: 0;
-	
-	background: rgb(255,255,255); /* Old browsers */
-	background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(229,229,229,1))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(left, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Opera11.10+ */
-	background: -ms-linear-gradient(left, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* IE10+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=1 ); /* IE6-9 */
-	background: linear-gradient(left, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* W3C */
 	-moz-box-shadow: 0px 0px 5px -1px #000;
 	-webkit-box-shadow: 0px 0px 5px -1px #000;
 	box-shadow: 0px 0px 5px -1px #000;
 	border: 1px solid white;
+	background-color: white;
 }
 
-#modal_side h3, h5 {
-	margin: auto;
-	margin-top: 5px;
-	margin-bottom: 5px;
+.modal_side .select_bar {
+	float: left;
+	width: 100%;
+	height: 27px;
+	border-bottom: 1px solid #CCCCCC;
+	background: rgb(255,255,255); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(47%,rgba(246,246,246,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* IE10+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+	background: linear-gradient(top, rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* W3C */
 }
 
-#modal_side .teammate_name {
+.modal_side > .select_bar > h3 {
+	display: inline-block;
+}
+
+
+.modal_side .teammate_name {
 	width: 100px;
 	margin-right: 0;
 	margin-top: 10px;
@@ -183,7 +173,7 @@ div.topbar {
 }
 
 
-#modal_side table {
+.modal_side table {
 	border-collapse: collapse;
 	text-align: center;
 	width: 80%;
@@ -196,7 +186,7 @@ div.topbar {
 	font-size: 0.8em;
 }
 
-#modal_side td, #modal_side th {
+.modal_side td, #modal_side th {
 	border: 1px solid #CFCFCF;
 }
 
@@ -248,6 +238,17 @@ div.topbar {
 
 .clear {
 	clear: both;
+}
+
+.clear.footer {
+	height: 60px;
+}
+
+#footer {
+	position: relative;
+	width: 100%;
+	background-color: black;
+	height: 60px;
 }
 
 
