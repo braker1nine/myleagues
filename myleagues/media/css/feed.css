@@ -1,0 +1,78 @@
+/* @group Left Sidebar */
+
+#left_sidebar a {
+	color: gray;
+}
+
+#left_sidebar a:hover {
+	text-decoration: none;
+	color: black;
+}
+
+#left_sidebar ul.leagues {
+	list-style: none;
+	margin-left: 15px;
+}
+
+#left_sidebar ul.leagues > li {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#left_sidebar ul.leagues > li > a > img {
+	height: 1.5em;
+	margin-bottom: -4px;
+	margin-right: 3px;
+	
+	border-radius: 2px;
+}
+
+#left_sidebar ul.leagues .league_name {
+	text-transform: uppercase;
+}
+
+#left_sidebar ul.leagues ul {
+	margin-left: 20px;
+}
+
+#left_sidebar ul.leagues ul li {
+	padding: 2px 3px;
+	font-size: 0.9em;
+	list-style: none;
+}
+
+#left_sidebar ul.leagues ul li:hover {
+	background-color: rgba(0, 0, 0, .1);
+}
+
+#left_sidebar ul.leagues ul li a {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+#left_sidebar ul.leagues ul li img {
+	height: 1.0em;
+	width:  18px;
+	margin-bottom: -1px;
+}
+
+#left_sidebar ul.leagues ul li img.avatar {
+	height: 16px;
+	width: 16px;
+	margin-right: 3px;
+	margin-bottom: -2px;
+	
+	border-radius: 2px;
+}
+
+/* @end */
+
+/* @group Body */
+
+#body img {
+	border-radius: 2px;
+	padding: 0 !important;
+	margin: 8px;
+}
+/* @end */

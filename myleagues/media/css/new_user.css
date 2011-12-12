@@ -1,0 +1,28 @@
+#body > h2 {
+	margin-left: 25px;
+}
+
+div.alert-message {
+	width: 90%;
+	margin: auto;
+	margin-bottom: 20px;
+}
+
+#body form {
+	margin-left: 80px;
+	margin-right: 80px;
+}
+
+.fieldWrapper label {
+	margin-right: 15px;
+}
+
+ul.errorlist {
+	list-style: none;
+	display: inline-block;
+	margin: 0;
+}
+
+form input.btn.large {
+	margin-left: 300px;
+}

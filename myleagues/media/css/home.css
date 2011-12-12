@@ -1,0 +1,40 @@
+#body {
+	border: none;
+	padding-top: 45px;
+}
+
+#body h3 {
+	text-align: center;
+}
+
+div.alert-message {
+	width: 90%;
+	margin: auto;
+	margin-bottom: 20px;
+}
+
+#body form {
+	text-align: center;
+}
+
+.fieldWrapper label {
+	width: auto !important;
+	text-align: right;
+}
+
+.fieldWrapper input {
+	width: 160px !important;
+	float: right;
+}
+
+ul.errorlist {
+	list-style: none;
+	display: inline-block;
+	margin: 0;
+	float: right;
+}
+
+form input.btn.large {
+	margin-left: 110px;
+	width: 160px;
+}
