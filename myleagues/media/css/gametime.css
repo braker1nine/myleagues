@@ -2,12 +2,22 @@
 	width: 938px;
 }
 
-table.positions {
-	width: 90%;
+.decision_wrapper > table {
+	width: 740px;
 	margin: auto;
-	text-align: center;
 }
 
-table.positions tr :first-child {
-	width: 10%;
+
+.drop_here {
+	background: black;
+	color: white;
+	border: 1px solid blue;
+}
+
+div.drag_player {
+	width: 740px;
+}
+
+.player_choices tr.disabled td {
+	background-color: rgb(255, 255, 255, 0.15);
 }
