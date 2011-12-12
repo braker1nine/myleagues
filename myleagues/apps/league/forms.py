@@ -39,7 +39,6 @@ class NewUserForm(forms.Form):
 class NewLeague_BasicInfoForm(forms.Form):
 	name = forms.CharField(max_length=30, label="League Name")
 	slug = forms.SlugField(help_text="May consist of letters, numbers, underscores, and hyphens.")
-	trade_points = forms.BooleanField()
 	draft_type = forms.ChoiceField(choices=((0, 'Standard'), (1, 'Auction'), (2, 'Paid Auction'),))
 	competition = forms.ChoiceField(choices=((0, 'Head-to-Head'), (1, 'Cumulative'),))
 	
@@ -119,8 +118,11 @@ class NewLeague_ScoringForm(forms.Form):
 class NewLeagueWizard(FormWizard):
 	
 	def done(self, request, form_list):
+		form1 = form_list[0]
+		new_league = League(name=form1.cleaned_data['name'], slug=form1.cleaned_data['slug'])
 		
-		return HttpResponseRedirect('/league-created/')
+		
+		return HttpResponseRedirect('/beta/league/%s' % form1.cleaned_data['slug'])
 		
 	def get_template(self, step):
 		return 'league_wizard_%s.html' % step
