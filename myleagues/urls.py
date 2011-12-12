@@ -18,10 +18,10 @@ from pinax.apps.photos.models import Image
 from pinax.apps.topics.models import Topic
 from pinax.apps.tribes.models import Tribe
 
-from team.views import team_page
 from draft.views import draft_page
-from league.views import league_page
-from owner.views import profile_page
+from league.views import league_page, team_page, profile_page, new_user, user_created, welcome, player_page, home
+from league.forms import NewLeagueWizard, NewLeague_BasicInfoForm, NewLeague_InviteFriendsForm, NewLeague_ScoringForm
+from gametime.views import decision
 
 
 handler500 = "pinax.views.server_error"
@@ -38,18 +38,18 @@ bookmarks_feed_dict = {"feed_dict": {"": BookmarkFeed }}
 
 
 urlpatterns = patterns("",
-    url(r"^$", direct_to_template, {
-        "template": "welcome.html",
-    }, name="home"),
-    #url(r"^admin/invite_user/$", "pinax.apps.signup_codes.views.admin_invite_user", name="admin_invite_user"),
-    #url(r"^admin/", include(admin.site.urls)),
+    #url(r"^$", direct_to_template, {
+    #    "template": "welcome.html",
+    #}, name="home"),
+    url(r"^admin/invite_user/$", "pinax.apps.signup_codes.views.admin_invite_user", name="admin_invite_user"),
+    url(r"^admin/", include(admin.site.urls)),
     #url(r"^about/", include("about.urls")),
     #url(r"^account/", include("pinax.apps.account.urls")),
     #url(r"^openid/(.*)", PinaxConsumer()),
     #url(r"^profiles/", include("pinax.apps.profiles.urls")),
     #url(r"^bbauth/", include("pinax.apps.bbauth.urls")),
     #url(r"^authsub/", include("pinax.apps.authsub.urls")),
-    #url(r"^invitations/", include("friends_app.urls")),
+    url(r"^invitations/", include("friends_app.urls")),
     #url(r"^notices/", include("notification.urls")),
     #url(r"^messages/", include("messages.urls")),
     #url(r"^announcements/", include("announcements.urls")),
@@ -65,11 +65,21 @@ urlpatterns = patterns("",
     #url(r"^locations/", include("locations.urls")),
     #url(r"^feeds/tweets/(.*)/$", "django.contrib.syndication.views.feed", tweets_feed_dict),
     #url(r"^feeds/bookmarks/(.*)/?$", "django.contrib.syndication.views.feed", bookmarks_feed_dict),
-    url(r"^league/(?P<league_id>[a-zA-Z0-9_]{5,30})/team/(?P<team_id>[a-zA-Z0-9_]{5,30})/$", team_page),
-    url(r"^league/(?P<league_id>[a-zA-Z0-9_]{5,30})/draft/$", draft_page),
-    url(r"^league/(?P<league_id>[a-zA-Z0-9_]{5,30})/$", league_page),
-    #url(r"^user/", include("idios.urls")),
-    url(r"^user/(?P<user_id>[a-zA-Z0-9_]{5,20})/$", profile_page),
+    url(r"^beta/league/(?P<league_id>[a-zA-Z0-9_]{5,30})/team/(?P<team_id>[a-zA-Z0-9_]{5,30})/$", team_page),
+    url(r"^beta/league/(?P<league_id>[a-zA-Z0-9_]{5,30})/draft/$", draft_page),
+    url(r"^beta/league/(?P<league_id>[a-zA-Z0-9_]{5,30})/$", league_page),
+    #url(r"^league/archive/(?P<league_id>[a-zA-Z0-9_]{5,30})/(?P<year>[0-9]{4})/$", league_archive),
+    url(r"^beta/player/(?P<player_slug>[a-zA-Z_]{5,50})/$", player_page),
+    url(r"^beta/user/(?P<user_id>[a-zA-Z0-9_]{5,20})/$", profile_page),
+    url(r"^beta/new_user/$", new_user),
+    url(r"^beta/new_user/created/$", user_created),
+    url(r"^beta/new_league/$", NewLeagueWizard([NewLeague_BasicInfoForm])),
+    url(r"^beta/gametime/$", decision),
+    url(r'^beta/home/$', home),
+    url(r'^threadedcomments/', include('threadedcomments.urls')),
+    url(r'^beta/$', welcome),
+    url(r'^login$', 'django.contrib.auth.views.login'),
+    url(r'facebook/', include('django_facebook.urls')),
 )
 
 ## @@@ for now, we'll use friends_app to glue this stuff together
