@@ -135,6 +135,8 @@ TEMPLATE_CONTEXT_PROCESSORS = [
     "friends_app.context_processors.invitations",
     
     "myleagues.context_processors.combined_inbox_count",
+    
+    'django_facebook.context_processors.facebook',
 ]
 
 COMBINED_INBOX_COUNT_SOURCES = [
@@ -172,12 +174,8 @@ INSTALLED_APPS = [
     "oembed",
     "groups",
     "threadedcomments",
-    "wakawaka",
-    "swaps",
     "voting",
     "tagging",
-    "bookmarks",
-    "photologue",
     "avatar",
     "flag",
     "microblogging",
@@ -187,14 +185,13 @@ INSTALLED_APPS = [
     "tagging_ext",
     "south",
     "idios",
+    "compressor",
 
     # Pinax
     "pinax.apps.account",
     "pinax.apps.signup_codes",
     "pinax.apps.analytics",
     "pinax.apps.profiles",
-    "pinax.apps.tribes",
-    "pinax.apps.photos",
     "pinax.apps.topics",
     "pinax.apps.threadedcomments_extras",
     "pinax.apps.signup_codes",
@@ -204,9 +201,11 @@ INSTALLED_APPS = [
     "about",
     
     # My Additions
-    "draft",
-    "team",
-    "owner",
+    #"draft",
+    #"team",
+    #"owner",
+    "league",
+    "django_facebook",
 ]
 
 FIXTURE_DIRS = [
@@ -216,7 +215,7 @@ FIXTURE_DIRS = [
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
 
 ABSOLUTE_URL_OVERRIDES = {
-    "auth.user": lambda o: "/profiles/profile/%s/" % o.username,
+    "auth.user": lambda o: "/user/%s/" % o.username,
 }
 
 MARKUP_FILTER_FALLBACK = "none"
@@ -227,7 +226,7 @@ MARKUP_CHOICES = [
     ("creole", u"Creole"),
 ]
 
-AUTH_PROFILE_MODULE = "owner.Owner"
+AUTH_PROFILE_MODULE = "league.Owner"
 NOTIFICATION_LANGUAGE_MODULE = "account.Account"
 
 ACCOUNT_OPEN_SIGNUP = False
@@ -238,9 +237,11 @@ ACCOUNT_UNIQUE_EMAIL = EMAIL_CONFIRMATION_UNIQUE_EMAIL = False
 
 AUTHENTICATION_BACKENDS = [
     "pinax.apps.account.auth_backends.AuthenticationBackend",
+    "django_facebook.auth_backends.FacebookBackend",
 ]
 
 LOGIN_URL = "/account/login/" # @@@ any way this can be a url name?
+LOGIN_REDIRECT_URL = '/home/'
 LOGIN_REDIRECT_URLNAME = "what_next"
 
 EMAIL_CONFIRMATION_DAYS = 2
@@ -290,3 +291,8 @@ try:
     from local_settings import *
 except ImportError:
     pass
+    
+    
+    
+FACEBOOK_APP_ID = "238946119476942"
+FACEBOOK_APP_SECRET = "d8436b322acb9e012301fd67a7fcd64a" 
