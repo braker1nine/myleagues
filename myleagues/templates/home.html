@@ -1,0 +1,57 @@
+{% extends "site_base.html" %}
+
+
+{% block extra_head %}
+<link rel="stylesheet" href="{{ STATIC_URL }}css/home.css" type="text/css" />
+{% endblock extra_head %}
+
+{% block subnav %}	
+	<div class="clear"></div>
+{% endblock %}
+		
+
+{% block body %}
+<div id="body" class="span16 columns">
+	<div class="span10 columns">
+		<div id="slidedeck_frame" class="skin-slidedeck">
+		    <dl class="slidedeck">
+		        <dt>Connect</dt>
+		        <dd>Slide Content</dd>
+		        <dt>Share</dt>
+		        <dd>Slide Content</dd>
+		        <dt>Compete</dt>
+		        <dd>Slide Content</dd>
+		        <dt>Swagger</dt>
+		        <dd>Slide Content</dd>
+		        <dt>Realtime</dt>
+		        <dd></dd>
+		    </dl>
+		</div>
+		<script type="text/javascript">
+		    // The most basic implementation using the default options
+		    $('.slidedeck').slidedeck();
+		</script>
+	</div>
+	<div class="span5 columns">
+		<h3>Create a new account</h3>
+		{% if form.errors %}
+			<div class="alert-message error">
+				<p>Please correct the error{{ form.errors|pluralize }} below.</p>
+			</div>
+		{% endif %}
+		
+		<form method="post" action="">{% csrf_token %}
+			{% for field in form %}
+				<div class="fieldWrapper clearfix{% if field.errors %} error{% endif %}">
+					{{field.label_tag}} {{field}}
+					{{field.help_text}}
+					{{field.errors}}
+				</div>
+			{% endfor %}
+			<input type="submit" name="create" value="Create" class="btn large" />
+		</form>
+	</div>
+</div>
+
+
+{% endblock %}

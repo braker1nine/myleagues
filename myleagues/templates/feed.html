@@ -1,0 +1,152 @@
+{% extends "site_base.html" %}
+{% load avatar_tags %}
+{% load comments_tag %}
+{% load threadedcommentstags %}
+
+{% block head_title_base %}{% block head_title %}Chris Brakebill{% endblock %}{% endblock %}</title>
+
+{% block extra_head %}
+<link rel="stylesheet" href="{{ STATIC_URL }}css/feed.css" type="text/css" />
+<link rel="stylesheet" href="{{ STATIC_URL}}owner/css/owner.css" type="text/css" />
+{% endblock extra_head %}
+
+{% block subnav %}
+	
+	<!--<ul class="nav_items">
+		<li><a href="#">Players</a></li>
+		<li><a href="#">History</a></li>
+		<li class="active"><a href="#">Profile</a></li>
+	</ul>
+	<div class="clear"></div>-->
+{% endblock %}
+		
+{% block left_sidebar %}
+<div class="span3 columns" id="left_sidebar">
+	<h3 class="name">{{ owner_user.first_name }} {{ owner_user.last_name }}</h3>
+   	<div class="avatar"></div>
+	
+	<ul class="leagues">
+	<li>
+		<a href="#" class="league_name"><img src="{{ STATIC_URL }}img/dooley.jpg" alt="avatar" />Dooley Dozen</a>
+		<ul>
+			<li class="team"><a href="#"><img class="avatar" src="{{ STATIC_URL }}img/power_t.jpg" alt="avatar" />Vols Bitch</a></li>
+			<li class="messages"><a href="#"><img src="{{ STATIC_URL }}img/message.png" alt="Messages" /> Messages</a></li>
+			<li class="transactions"><a href="#"><img src="{{ STATIC_URL }}img/transaction.png" alt="Transactions" />Transactions</a></li>
+		</ul>
+	</li>
+	<li>
+		<a href="#" class="league_name">Shower Etiquette All-Stars</a>
+		<ul>
+			<li class="team">My team</li>
+			<li class="messages"><a href="#"><img src="{{ STATIC_URL }}img/message.png" alt="Messages" /> Messages</a></li>
+			<li class="transactions"><a href="#"><img src="{{ STATIC_URL }}img/transaction.png" alt="Transactions" />Transactions</a></li>
+		</ul>
+	</li>
+	</ul>
+</div>
+{% endblock left_sidebar %}
+
+{% block right_sidebar %}
+<div class="span3 columns" id="right_sidebar">
+	<ul>
+		<li><a href="/beta/new_league/">Create League</a></li>
+		<li><a href="#">Join League</a></li>
+	</ul>
+</div>
+{% endblock %}
+		
+
+{% block body %}
+<div class="span10 columns" id="body">
+	<div class="information">
+	
+	</div>
+	
+	<div class="post_update">
+		<form>
+			<textarea placeholder="Got somethin' to say?" class="xxlarge" cols="20"></textarea>
+			<br />
+			<input type="submit" name="share" value="Share" class="btn" />
+			
+		</form>
+		<ul>
+			<li><a href="#">Public</a></li>
+			<li><a href="#">Friends</a></li>
+			<li><a href="#">League 1</a></li>
+			<li><a href="#">League 2</a></li>
+		</ul>
+	</div>
+	
+	{% for entry in entries %}
+	{% if entry.statusentry %}
+	<div class="feed_item status_update">
+		<div class="avatar">{% avatar entry.statusentry.writer 40 %}</div>
+		<h5><a href="#">{{entry.statusentry.writer.user.first_name}} {{entry.statusentry.writer.user.last_name}}</a></h5>
+		<p>{{ entry.statusentry.text }}</p>	
+	</div>
+	{% endif %}
+	
+	{% if entry.tradeentry %}
+	<div class="feed_item trade">
+		<div class="avatar">{% avatar profile 40 %}</div>
+		<h5><a href="#">{{entry.statusentry.writer.user.first_name}} {{entry.statusentry.writer.user.last_name}}</a></h5>
+		<p>made a trade with {% for trade in entry.tradeentry.trade.teamtrades %}{{trade.team.name}}{% endfor %} in the league <a href="#">{{entry.tradeentry.league.name}}</a>.</p>
+	</div>
+	{% endif %}	
+	
+	{% endfor %}
+	<div class="status_update feed_item">
+		<img src="{{ STATIC_URL }}img/profile.png" class="profile_img" />
+		<h5><a href="#">Chris Brakebill</a></h5>
+		<p>This is the status text and I'm really a big fan of <a href="#" class="player_link">Michael Vick</a></p>
+	</div>
+	
+	<div class="status_update feed_item">
+		<img src="{{ STATIC_URL }}img/jameson.jpg" class="profile_img" />
+		<h5><a href="#">Jim Bob Cooter</a></h5>
+		<p>Your mother was a hamster and your father smelled of elderberries</p>
+	</div>
+	
+	<div class="trade feed_item">
+		<img src="{{ STATIC_URL }}img/profile.png" class="profile_img" />
+		<img src="{{ STATIC_URL }}img/profile.png" class="profile_img other" />
+		<h5><a href="#">Chris Brakebill</a></h5>
+		<p>made a trade with <a href="#">Chris Brakebill</a> in the league <a href="#">Dooley Dozen</a>.</p>
+		<div class="trade_self span4 columns">
+			Chris got:
+			<ul>
+				<li><a href="#" class="player_link">Peyton Manning</a></li>
+				<li><a href="#" class="player_link">LeSean McCoy</a></li>
+			</ul>
+		</div>
+		<div class="trade_opponent span4 columns offset1">
+			Chris got:
+			<ul>
+				<li><a href="#" class="player_link">Brian Bosworth</a></li>
+				<li><a href="#" class="player_link">Clinton Portis</a></li>
+			</ul>
+		</div>
+		<div class="clear"></div>
+	</div>
+	
+	<div class="add_drop feed_item">
+		<img src="{{ STATIC_URL }}img/profile.png" class="profile_img" />
+		<h5><a href="#">Chris Brakebill</a></h5>
+		<span>Has made some roster changes.</span>
+		<br />
+		<div class="added span4 columns">
+			<span>Added</span>
+			<ul>
+				<li><a href="#" class="player_link">Jim McMahon</a></li>
+			</ul>
+		</div>
+		<div class="dropped span4 columns offset1">
+			<span>Dropped</span>
+			<ul>
+				<li><a href="#" class="player_link">Nate Newton</a></li>
+			</ul>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+{% endblock body %}
