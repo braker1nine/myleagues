@@ -1,4 +1,4 @@
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, redirect
 from django.template import RequestContext
 from django.template.defaultfilters import slugify
 from django.http import Http404
@@ -19,6 +19,14 @@ def profile_page(request, user_id):
 		
 	owner_user = profile.user
 	return render_to_response('owner.html', locals(), context_instance=RequestContext(request))
+
+def player_page(request, player_slug):
+	try:
+		player = Player.objects.get(slug=user_id)
+	except Owner.DoesNotExist:
+		raise Http404 #execute a search here instead?
+		
+	return render_to_response('player.html', {'player':player}, context_instance=RequestContext(request))
 	
 def team_page(request, team_id, league_id):
 	return render_to_response("team.html", context_instance=RequestContext(request))
@@ -43,7 +51,12 @@ def new_user(request):
 def user_created(request):
 	return render_to_response('user_created.html', locals(), context_instance=RequestContext(request))
 	
-def home_view(request):
+def welcome(request):
+
+	if request.user.is_authenticated():
+		# Redirect to home
+		return redirect('/home/')
+	
 	if request.method == 'POST':
 		form = NewUserForm(request.POST)
 		if form.is_valid():
@@ -59,3 +72,13 @@ def home_view(request):
 	else:
 		form = NewUserForm()
 	return render_to_response('home.html', {'form':form}, context_instance=RequestContext(request))
+	
+def home(request):
+
+	#people = request.user.friends_set.all();
+	#for league in request.user.owner.leagues:
+	#	people = league.owners_set.all() | people
+		
+	#events = Event.objects.filter(tagged_owners__in=people).order_by('updated')[:25]
+	
+	return render_to_response('feed.html',context_instance=RequestContext(request))
