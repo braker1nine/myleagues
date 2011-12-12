@@ -1,4 +1,7 @@
 {% extends "site_base.html" %}
+{% load avatar_tags %}
+{% load comments_tag %}
+{% load threadedcommentstags %}
 
 {% block head_title_base %}{% block head_title %}Chris Brakebill{% endblock %}{% endblock %}</title>
 
@@ -23,17 +26,8 @@
 		
 {% block left_sidebar %}
 <div class="span3 columns" id="left_sidebar">
-	<h3 class="name">Chris Brakebill</h3>
-   	<img src="{{ STATIC_URL }}img/profile.png" class="profile_img" />
-   	
-	<!--<img src="{{ STATIC_URL }}img/social/icon-facebook-32.png" />
-	<img src="{{ STATIC_URL }}img/social/icon-twitter-32.png" />-->
-	
-	<!--<img src="{{ STATIC_URL }}img/social/facebook.png" width="32px" />
-	<img src="{{ STATIC_URL }}img/social/twitter.png" width="32px" />-->
-	
-	<!--<img src="{{ STATIC_URL }}img/social/facebook1.png" width="32px" />
-	<img src="{{ STATIC_URL }}img/social/twitter1.png" width="32px" />-->
+	<h3 class="name">{{ owner_user.first_name }} {{ owner_user.last_name }}</h3>
+   	<div class="avatar">{% avatar profile 150 %}</div>
 	
 	<a href="http://www.facebook.com/chris.brakebill"><img src="{{ STATIC_URL }}img/social/facebook2.png" /></a>
 	<a href="http://www.twitter.com/chrisbrakebill"><img src="{{ STATIC_URL }}img/social/twitter2.png" /></a>
@@ -50,10 +44,14 @@
 </div>
 {% endblock left_sidebar %}
 
+{% block right_sidebar %}
+<div class="span3 columns" id="right_sidebar">
+</div>
+{% endblock %}
 		
 
 {% block body %}
-<div class="span13 columns" id="body">
+<div class="span10 columns" id="body">
 	<div class="information">
 	
 	</div>
@@ -67,10 +65,36 @@
 		</form>
 	</div>
 	
+	{% for entry in entries %}
+	{% if entry.statusentry %}
+	<div class="feed_item status_update">
+		<div class="avatar">{% avatar entry.statusentry.writer 40 %}</div>
+		<h5><a href="#">{{entry.statusentry.writer.user.first_name}} {{entry.statusentry.writer.user.last_name}}</a></h5>
+		<p>{{ entry.statusentry.text }}</p>	
+	</div>
+	{% endif %}
+	
+	{% if entry.tradeentry %}
+	<div class="feed_item trade">
+		<div class="avatar">{% avatar profile 40 %}</div>
+		<h5><a href="#">{{entry.statusentry.writer.user.first_name}} {{entry.statusentry.writer.user.last_name}}</a></h5>
+		<p>made a trade with {% for trade in entry.tradeentry.trade.teamtrades %}{{trade.team.name}}{% endfor %} in the league <a href="#">{{entry.tradeentry.league.name}}</a>.</p>
+	</div>
+	{% endif %}	
+	
+	{% endfor %}
+	
+	<!-- Hardcoded samples to work out design of status updates, trades, add/drops -->
 	<div class="status_update feed_item">
 		<img src="{{ STATIC_URL }}img/profile.png" class="profile_img" />
 		<h5><a href="#">Chris Brakebill</a></h5>
 		<p>This is the status text and I'm really a big fan of <a href="#" class="player_link">Michael Vick</a></p>
+	</div>
+	
+	<div class="status_update feed_item">
+		<img src="{{ STATIC_URL }}img/jameson.jpg" class="profile_img" />
+		<h5><a href="#">Jim Bob Cooter</a></h5>
+		<p>Your mother was a hamster and your father smelled of elderberries</p>
 	</div>
 	
 	<div class="trade feed_item">
@@ -98,8 +122,20 @@
 	<div class="add_drop feed_item">
 		<img src="{{ STATIC_URL }}img/profile.png" class="profile_img" />
 		<h5><a href="#">Chris Brakebill</a></h5>
-		<p>Has made some roster changes.</p>
-		<img src="{{ STATIC_URL }}img/plus.png" width="15px" height="15px" />
+		<span>Has made some roster changes.</span>
+		<br />
+		<div class="added span4 columns">
+			<span>Added</span>
+			<ul>
+				<li><a href="#" class="player_link">Jim McMahon</a></li>
+			</ul>
+		</div>
+		<div class="dropped span4 columns offset1">
+			<span>Dropped</span>
+			<ul>
+				<li><a href="#" class="player_link">Nate Newton</a></li>
+			</ul>
+		</div>
 		<div class="clear"></div>
 	</div>
 </div>
